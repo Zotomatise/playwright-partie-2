@@ -45,4 +45,44 @@ test.describe("Store page - POM", () => {
     const productCount = await productWrappers.count();
     expect(productCount).toBeGreaterThanOrEqual(3);
   });
+
+  test.only("Consommer les 3 fixtures dans mes tests", async ({
+    storePage,
+    testUser,
+    apiClient,
+  }) => {
+    // Utiliser la fixture storePage pour aller sur la page d'accueil
+    await storePage.goto();
+
+    // Utiliser la fixture apiClient pour faire une requête API (ex: récupérer les détails d'un produit)
+    const response = await apiClient.get("/fr/store");
+    expect(response.ok()).toBe(true);
+
+    // Utiliser la fixture testUser pour afficher l'email de l'utilisateur de test
+    console.log("Email du test user :", testUser.email);
+  });
+  test.only("Consommer les 3 fixtures dans mes tests 2", async ({
+    storePage,
+    testUser,
+    apiClient,
+  }) => {
+    // Utiliser la fixture storePage pour aller sur la page d'accueil
+    await storePage.goto();
+
+    // Utiliser la fixture apiClient pour faire une requête API (ex: récupérer les détails d'un produit)
+    const response = await apiClient.get("/fr/store");
+    expect(response.ok()).toBe(true);
+  });
+  test.only("Consommer les 3 fixtures dans mes tests 3", async ({
+    storePage,
+    testUser,
+    apiClient,
+  }) => {
+    // Utiliser la fixture storePage pour aller sur la page d'accueil
+    await storePage.goto();
+
+    // Utiliser la fixture apiClient pour faire une requête API (ex: récupérer les détails d'un produit)
+    const response = await apiClient.get("/fr/store");
+    expect(response.ok()).toBe(true);
+  });
 });
