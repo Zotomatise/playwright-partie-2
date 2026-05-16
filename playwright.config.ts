@@ -36,6 +36,16 @@ export default defineConfig({
         },
       },
     },
+    {
+      name: "hybride",
+      testDir: "./tests/hybride",
+      use: {
+        baseURL: process.env.ZOTOSHOP_API_URL,
+        extraHTTPHeaders: {
+          "x-publishable-api-key": process.env.ZOTOSHOP_PUBLISHABLE_KEY ?? "",
+        },
+      },
+    },
     // { name: 'firefox',  use: { ...devices['Desktop Firefox'] } },
     // { name: 'webkit',   use: { ...devices['Desktop Safari'] } },
     // { name: 'mobile-chrome', use: { ...devices['Pixel 7'] } },
