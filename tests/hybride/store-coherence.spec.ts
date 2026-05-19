@@ -20,7 +20,7 @@ test.describe("Store coherence", () => {
     console.log(`UI count: ${uiProducts}`);
     expect(uiProducts).toBe(apiCount);
   });
-  test.only("Pattern roi - Coherence affichage UI > API", async ({
+  test("Pattern roi - Coherence affichage UI > API", async ({
     request,
     page,
   }) => {

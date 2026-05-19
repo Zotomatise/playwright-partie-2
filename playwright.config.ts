@@ -21,11 +21,52 @@ export default defineConfig({
     storageState: "playwright/.auth/user.json",
   },
   projects: [
+    // Test against desktop browsers.
     {
       name: "chromium",
       testDir: "./tests/e2e",
       use: { ...devices["Desktop Chrome"] },
     },
+    {
+      name: "firefox",
+      testDir: "./tests/e2e",
+      use: { ...devices["Desktop Firefox"] },
+    },
+    {
+      name: "safari",
+      testDir: "./tests/e2e",
+      use: { ...devices["Desktop Safari"] },
+    },
+    // Test against mobile viewports.
+    {
+      name: "mobile-chrome",
+      testDir: "./tests/e2e",
+      use: { ...devices["Pixel 7"] },
+    },
+    {
+      name: "mobile-safari",
+      testDir: "./tests/e2e",
+      use: { ...devices["iPhone 12"] },
+    },
+    // Test against by Tag
+    {
+      name: "smoke-chrome",
+      testDir: "./tests/e2e",
+      grep: /@smoke/,
+      use: { ...devices["Desktop Chrome"] },
+    },
+    {
+      name: "regression-chrome",
+      testDir: "./tests/e2e",
+      grep: /@regression/,
+      use: { ...devices["Desktop Chrome"] },
+    },
+    {
+      name: "nightly-chrome",
+      testDir: "./tests/e2e",
+      use: { ...devices["Desktop Chrome"] },
+    },
+    // Test against API
     {
       name: "api",
       testDir: "./tests/api",
@@ -46,8 +87,15 @@ export default defineConfig({
         },
       },
     },
-    // { name: 'firefox',  use: { ...devices['Desktop Firefox'] } },
-    // { name: 'webkit',   use: { ...devices['Desktop Safari'] } },
-    // { name: 'mobile-chrome', use: { ...devices['Pixel 7'] } },
+    {
+      name: "mocking",
+      testDir: "./tests/mocking",
+      use: {
+        baseURL: process.env.ZOTOSHOP_API_URL,
+        extraHTTPHeaders: {
+          "x-publishable-api-key": process.env.ZOTOSHOP_PUBLISHABLE_KEY ?? "",
+        },
+      },
+    },
   ],
 });

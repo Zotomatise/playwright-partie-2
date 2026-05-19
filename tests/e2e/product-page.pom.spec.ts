@@ -14,7 +14,7 @@ test.describe("Page produit chargée— POM", () => {
     await productPagePrete.expectVisible();
     await productPagePrete.expectPrixPositif();
   });
-  test.only("le panier contient bien un article après ajout depuis la page produit", async ({
+  test("le panier contient bien un article après ajout depuis la page produit", async ({
     panierAvecArticle,
   }) => {
     await panierAvecArticle.expectHasItems(1);

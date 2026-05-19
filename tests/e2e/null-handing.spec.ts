@@ -35,7 +35,7 @@ test("vérification HTTPS du CTA store avec type Guard", async ({ page }) => {
   expect(isHttps).toBe(true);
 });
 
-test.only("|| vs ?? — produit ZotoShop en rupture", async () => {
+test("|| vs ?? — produit ZotoShop en rupture", async () => {
   const stockQuantity = 0;
 
   const affichage1 = stockQuantity || "Plus en stock";

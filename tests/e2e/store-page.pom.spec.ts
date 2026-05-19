@@ -1,17 +1,21 @@
 import { test, expect } from "../fixtures/page.fixture";
 
-test.describe("Store page - POM", () => {
-  test("le store affiche au moins un produit", async ({ storePage }) => {
+test.describe("@regression @smoke Store page - POM", () => {
+  test("@regression @smoke store affiche au moins un produit", async ({
+    storePage,
+  }) => {
     await storePage.goto();
     await storePage.expectOneProductIsVisible();
   });
 
-  test("le premier produit a un prix positif", async ({ storePage }) => {
+  test("@regression @smoke le premier produit a un prix positif", async ({
+    storePage,
+  }) => {
     await storePage.goto();
     await storePage.expectPositivePrice();
   });
 
-  test("cliquer sur un produit ouvre la page produit", async ({
+  test("@regression cliquer sur un produit ouvre la page produit", async ({
     storePage,
     page,
   }) => {
@@ -46,7 +50,7 @@ test.describe("Store page - POM", () => {
     expect(productCount).toBeGreaterThanOrEqual(3);
   });
 
-  test.only("Consommer les 3 fixtures dans mes tests", async ({
+  test("Consommer les 3 fixtures dans mes tests", async ({
     storePage,
     testUser,
     apiClient,
@@ -61,7 +65,7 @@ test.describe("Store page - POM", () => {
     // Utiliser la fixture testUser pour afficher l'email de l'utilisateur de test
     console.log("Email du test user :", testUser.email);
   });
-  test.only("Consommer les 3 fixtures dans mes tests 2", async ({
+  test("Consommer les 3 fixtures dans mes tests 2", async ({
     storePage,
     testUser,
     apiClient,
@@ -73,7 +77,7 @@ test.describe("Store page - POM", () => {
     const response = await apiClient.get("/fr/store");
     expect(response.ok()).toBe(true);
   });
-  test.only("Consommer les 3 fixtures dans mes tests 3", async ({
+  test("Consommer les 3 fixtures dans mes tests 3", async ({
     storePage,
     testUser,
     apiClient,
