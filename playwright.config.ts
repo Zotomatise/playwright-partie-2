@@ -3,6 +3,7 @@ import "dotenv/config";
 
 const STOREFRONT_URL = process.env.STOREFRONT_URL ?? "http://localhost:8000";
 
+const isCI = !!process.env.CI;
 export default defineConfig({
   globalSetup: "./playwright/global-setup.ts",
   testDir: "./tests",
@@ -10,7 +11,32 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 2 : undefined,
-  reporter: [["html", { open: "never" }], ["list"]],
+  reporter: isCI
+    ? [
+        //  Mode CI — lisible par machine + partageable
+        ["list"],
+        ["junit", { outputFile: "reports/results.xml" }],
+        ["blob"], // pour merger les shards en M9
+        ["github"], //  annotations dans les Pull Requests GitHub
+      ]
+    : [
+        // Mode local — visuel + rapide
+        ["list"],
+        ["html", { open: "never" }],
+        [
+          "allure-playwright",
+          {
+            resultsDir: "allure-results",
+            links: {
+              issue: {
+                urlTemplate: "https://zotomatise.atlassian.net/browse/%s",
+                nameTemplate: "Jira #%s",
+              },
+            },
+          },
+        ],
+        ["./reporters/team-notifs-reporter.ts"],
+      ],
   use: {
     baseURL: STOREFRONT_URL,
     trace: "on-first-retry",

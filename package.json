@@ -14,7 +14,9 @@
     "codegen": "playwright codegen http://localhost:8000",
     "lint": "eslint tests/",
     "typecheck": "tsc --noEmit --ignoreDeprecations 6.0",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test:clean": "rm -rf allure-results allure-report blob-report playwright-report reports",
+    "test:ci": "npm run test:clean && CI=1 npx playwright test --project=smoke-chrome"
   },
   "keywords": [],
   "author": "",
@@ -25,6 +27,7 @@
     "@types/node": "^25.6.0",
     "@typescript-eslint/eslint-plugin": "^8.59.1",
     "@typescript-eslint/parser": "^8.59.1",
+    "allure-playwright": "^3.8.0",
     "dotenv": "^17.4.2",
     "eslint": "^10.3.0",
     "husky": "^9.1.7",

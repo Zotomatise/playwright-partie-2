@@ -1,9 +1,12 @@
+import { link } from "node:fs";
 import { test, expect } from "../fixtures/page.fixture";
+import { JIRA_TICKETS, linkJira } from "../helpers/jira";
 
-test.describe("@regression @smoke Store page - POM", () => {
-  test("@regression @smoke store affiche au moins un produit", async ({
+test.describe("@regression Store page - POM", () => {
+  test("@regression  @smoke store affiche au moins un produit", async ({
     storePage,
   }) => {
+    linkJira(JIRA_TICKETS.CHECKOUT_BUTTON_MOBILE, "blocker");
     await storePage.goto();
     await storePage.expectOneProductIsVisible();
   });
@@ -11,6 +14,7 @@ test.describe("@regression @smoke Store page - POM", () => {
   test("@regression @smoke le premier produit a un prix positif", async ({
     storePage,
   }) => {
+    linkJira(JIRA_TICKETS.CHECKOUT_BUTTON_MOBILE, "critical");
     await storePage.goto();
     await storePage.expectPositivePrice();
   });
