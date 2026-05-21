@@ -93,7 +93,7 @@ export default defineConfig({
       testDir: "./tests/e2e",
       use: { ...devices["Desktop Chrome"] },
     },
-    // 🚀 Smoke API — project CI-ready (M9.L2)
+    // 🚀 Smoke API — project CI-ready (M9.L1)
     // Pas d'auth UI requis, juste l'API publique → tourne en CI sans secrets
     // (les tests UI nécessitent les secrets vus en M9.L3).
     {
@@ -105,6 +105,9 @@ export default defineConfig({
         extraHTTPHeaders: {
           "x-publishable-api-key": process.env.ZOTOSHOP_PUBLISHABLE_KEY ?? "",
         },
+        // 🎓 Override : ce project n'a PAS besoin d'auth UI → on ne lit
+        // pas le storageState (qui n'existe pas en CI faute de login).
+        storageState: undefined,
       },
     },
     // Test against API (toute la suite)
