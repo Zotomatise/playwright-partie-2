@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [main]
 
+# 🛡️ Future-proof : on force les actions JS à tourner sur Node 24
+# (Node 20 sera retiré des runners GitHub en septembre 2026).
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   test:
     runs-on: ubuntu-latest

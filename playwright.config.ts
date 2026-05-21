@@ -15,8 +15,9 @@ export default defineConfig({
     ? [
         //  Mode CI — lisible par machine + partageable
         ["list"],
+        ["html", { open: "never", outputFolder: "playwright-report" }], // 📦 artefact CI
         ["junit", { outputFile: "reports/results.xml" }],
-        ["blob"], // pour merger les shards en M9
+        ["blob"], // pour merger les shards en M9.L2
         ["github"], //  annotations dans les Pull Requests GitHub
         ["./reporters/team-notifs-reporter.ts"], // Notifications Teams/Slack
       ]
