@@ -6,13 +6,12 @@ on:
   pull_request:
     branches: [main]
 
-# Future-proof : on force les actions JS à tourner sur Node 24
-# (Node 20 sera retiré des runners GitHub en septembre 2026).
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   test:
+    timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -25,14 +24,18 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install Playwright browsers
+      - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 
       - name: Run smoke API tests
+        run: npx playwright test --project=smoke-api
         env:
-          # smoke-api consomme une URL publique + une publishable key.
-          # Pas un secret par essence → OK en clair dans le YAML.
-          # Les VRAIES secrets (creds, webhooks) arrivent en M9.L3.
           ZOTOSHOP_API_URL: https://api.zotomatise.com
           ZOTOSHOP_PUBLISHABLE_KEY: pk_0ab41d879415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233
-        run: npx playwright test --project=smoke-api
+
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
