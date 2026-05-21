@@ -5,9 +5,15 @@ async function globalSetup(_config: FullConfig): Promise<void> {
   const password = process.env.ZOTOSHOP_TEST_PASSWORD;
 
   if (!email || !password) {
-    throw new Error(
-      "Variables manquantes : ZOTOSHOP_TEST_EMAIL et ZOTOSHOP_TEST_PASSWORD dans .env",
+    // 🎓 Mode "graceful degradation" : si les creds ne sont pas dispo (ex : CI sans
+    // GitHub Secrets configurés — voir M9.L3), on skippe le login UI proprement.
+    // Les tests qui dépendent de storageState échoueront, mais les projects
+    // sans auth (ex : smoke-api) tourneront sans souci.
+    console.warn(
+      "⚠️  ZOTOSHOP_TEST_EMAIL/PASSWORD non définis — global-setup skippé. " +
+        "Voir M9.L3 pour configurer les GitHub Secrets.",
     );
+    return;
   }
 
   // 1. Lancer le navigateur

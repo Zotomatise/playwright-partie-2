@@ -93,7 +93,21 @@ export default defineConfig({
       testDir: "./tests/e2e",
       use: { ...devices["Desktop Chrome"] },
     },
-    // Test against API
+    // 🚀 Smoke API — project CI-ready (M9.L2)
+    // Pas d'auth UI requis, juste l'API publique → tourne en CI sans secrets
+    // (les tests UI nécessitent les secrets vus en M9.L3).
+    {
+      name: "smoke-api",
+      testDir: "./tests/api",
+      grep: /@smoke/,
+      use: {
+        baseURL: process.env.ZOTOSHOP_API_URL ?? "https://api.zotomatise.com",
+        extraHTTPHeaders: {
+          "x-publishable-api-key": process.env.ZOTOSHOP_PUBLISHABLE_KEY ?? "",
+        },
+      },
+    },
+    // Test against API (toute la suite)
     {
       name: "api",
       testDir: "./tests/api",
