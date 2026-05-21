@@ -30,9 +30,9 @@ jobs:
 
       - name: Run smoke API tests
         env:
-          #smoke-api consomme une URL publique + une publishable key.
-          #Pas un secret par essence → OK en clair dans le YAML.
-          #Les VRAIES secrets (creds, webhooks) arrivent en M9.L3.
+          # smoke-api consomme une URL publique + une publishable key.
+          # Pas un secret par essence → OK en clair dans le YAML.
+          # Les VRAIES secrets (creds, webhooks) arrivent en M9.L3.
           ZOTOSHOP_API_URL: https://api.zotomatise.com
           ZOTOSHOP_PUBLISHABLE_KEY: pk_0ab41d879415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233
         run: npx playwright test --project=smoke-api
