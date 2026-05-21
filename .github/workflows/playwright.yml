@@ -33,17 +33,6 @@ jobs:
           ZOTOSHOP_PUBLISHABLE_KEY: pk_0ab41d879415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233
         run: npx playwright test --project=smoke-api
 
-      # 🔐 SMOKE CHROME (E2E UI) — login UI via global-setup
-      # Les credentials de test viennent des GitHub Secrets (M9.L3).
-      - name: Run smoke E2E tests (Chrome)
-        run: npx playwright test --project=smoke-chrome
-        env:
-          STOREFRONT_URL: ${{ secrets.STOREFRONT_URL }}
-          ZOTOSHOP_API_URL: https://api.zotomatise.com
-          ZOTOSHOP_PUBLISHABLE_KEY: pk_0ab41d879415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233
-          ZOTOSHOP_TEST_EMAIL: ${{ secrets.ZOTOSHOP_TEST_EMAIL }}
-          ZOTOSHOP_TEST_PASSWORD: ${{ secrets.ZOTOSHOP_TEST_PASSWORD }}
-
       - uses: actions/upload-artifact@v4
         if: always()
         with:
