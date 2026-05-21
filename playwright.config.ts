@@ -105,9 +105,9 @@ export default defineConfig({
         extraHTTPHeaders: {
           "x-publishable-api-key": process.env.ZOTOSHOP_PUBLISHABLE_KEY ?? "",
         },
-        // 🎓 Override : ce project n'a PAS besoin d'auth UI → on ne lit
-        // pas le storageState (qui n'existe pas en CI faute de login).
-        storageState: undefined,
+        // 🎓 Override : ce project n'a PAS besoin d'auth UI → état vide
+        // explicite (undefined ne marche pas, Playwright garde l'héritage).
+        storageState: { cookies: [], origins: [] },
       },
     },
     // Test against API (toute la suite)

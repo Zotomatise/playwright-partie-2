@@ -26,7 +26,7 @@ jobs:
       - name: Run smoke API tests
         env:
           ZOTOSHOP_API_URL: https://api.zotomatise.com
-          ZOTOSHOP_PUBLISHABLE_KEY: pk_67ca30d828fcd266b9f6ac6f89e77240603030d4ed5a3220037d84ea1c34e387
+          ZOTOSHOP_PUBLISHABLE_KEY: pk_0ab41d879415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233
         run: npx playwright test --project=smoke-api
 
       - name: Upload HTML report
