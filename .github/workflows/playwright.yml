@@ -6,6 +6,8 @@ on:
   pull_request:
     branches: [main]
 
+# 🛡️ Future-proof : on force les actions JS à tourner sur Node 24
+# (Node 20 sera retiré des runners GitHub en septembre 2026).
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -27,11 +29,24 @@ jobs:
       - name: Install Playwright Chromium
         run: npx playwright install --with-deps chromium
 
+      # 🚀 SMOKE API — pas d'auth UI, juste l'API publique
+      # URL + publishable key OK en clair (publiques par essence).
       - name: Run smoke API tests
-        run: npx playwright test --project=smoke-api
         env:
           ZOTOSHOP_API_URL: https://api.zotomatise.com
-          ZOTOSHOP_PUBLISHABLE_KEY: 879415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233
+          ZOTOSHOP_PUBLISHABLE_KEY: pk_0ab41d879415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233
+        run: npx playwright test --project=smoke-api
+
+      # 🔐 SMOKE CHROME (E2E UI) — login UI via global-setup
+      # Les credentials de test viennent des GitHub Secrets (M9.L3).
+      - name: Run smoke E2E tests (Chrome)
+        env:
+          STOREFRONT_URL: ${{ secrets.STOREFRONT_URL }}
+          ZOTOSHOP_API_URL: https://api.zotomatise.com
+          ZOTOSHOP_PUBLISHABLE_KEY: pk_0ab41d879415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233
+          ZOTOSHOP_TEST_EMAIL: ${{ secrets.ZOTOSHOP_TEST_EMAIL }}
+          ZOTOSHOP_TEST_PASSWORD: ${{ secrets.ZOTOSHOP_TEST_PASSWORD }}
+        run: npx playwright test --project=smoke-chrome
 
       - uses: actions/upload-artifact@v4
         if: always()
