@@ -1,24 +1,6 @@
-<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="7.136325">
-<testsuite name="e2e/connected.spec.ts" timestamp="2026-05-19T14:51:44.020Z" hostname="smoke-chrome" tests="3" failures="0" skipped="0" time="3.815" errors="0">
-<testcase name="Tests de connexion › @smoke devrait être connecté grâce au global setup" classname="e2e/connected.spec.ts" time="1.165">
-</testcase>
-<testcase name="Tests de connexion › @smoke déjà connecté à zotoshop et panier accessible" classname="e2e/connected.spec.ts" time="1.489">
-</testcase>
-<testcase name="Tests de connexion › @smoke déjà connecté à zotoshop et store accessible" classname="e2e/connected.spec.ts" time="1.161">
-</testcase>
-</testsuite>
-<testsuite name="e2e/store-page.pom.spec.ts" timestamp="2026-05-19T14:51:44.020Z" hostname="smoke-chrome" tests="1" failures="0" skipped="0" time="2.682" errors="0">
-<testcase name="@regression Store page - POM › @regression @smoke le premier produit a un prix positif" classname="e2e/store-page.pom.spec.ts" time="2.682">
-<properties>
-<property name="issue" value="SCRUM-5">
-</property>
-<property name="severity" value="critical">
-</property>
-</properties>
-<system-out>
-<![CDATA[[@regression @smoke le premier produit a un prix positif] durée: 2835 ms
-]]>
-</system-out>
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="3.3538930000000002">
+<testsuite name="api/product.spec.ts" timestamp="2026-05-21T11:13:49.991Z" hostname="smoke-api" tests="1" failures="0" skipped="0" time="0.492" errors="0">
+<testcase name="Tests de connexion › @smoke API liste produits" classname="api/product.spec.ts" time="0.492">
 </testcase>
 </testsuite>
 </testsuites>
