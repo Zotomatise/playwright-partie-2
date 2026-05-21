@@ -31,7 +31,7 @@ jobs:
         run: npx playwright test --project=smoke-api
         env:
           ZOTOSHOP_API_URL: https://api.zotomatise.com
-          ZOTOSHOP_PUBLISHABLE_KEY: 9415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233
+          ZOTOSHOP_PUBLISHABLE_KEY: pk_0ab41d879415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233
 
       - uses: actions/upload-artifact@v4
         if: always()
