@@ -1,140 +1,171 @@
 import type {
   Reporter,
+  FullConfig,
+  Suite,
   TestCase,
   TestResult,
   FullResult,
-  Suite,
-  FullConfig,
 } from "@playwright/test/reporter";
 
-/**
- * Reporter custom — envoie une notif Teams (MessageCard riche) ou Slack
- * sur échec de tests @smoke.
- *
- * Variables d'env supportées :
- *   TEAMS_WEBHOOK_URL  → format MessageCard (gras, barre rouge, sections, bouton)
- *   SLACK_WEBHOOK_URL  → format {text: ...} simple
- *
- * Détection auto : si l'URL contient "webhook.office.com" → MessageCard.
- * Sinon → texte simple {text: ...} (compatible Slack, webhook.site, Discord).
- */
+interface FailedTest {
+  title: string;
+  error: string;
+}
 
-const TEAMS_WEBHOOK = process.env.TEAMS_WEBHOOK_URL ?? "";
-const SLACK_WEBHOOK = process.env.SLACK_WEBHOOK_URL ?? "";
+class TeamNotifsReporter implements Reporter {
+  private failedSmokeTests: FailedTest[] = [];
+  private startTime: number = 0;
+  private totalTests: number = 0;
+  private passedTests: number = 0;
 
-const MAX_FAILURES = 8;
-const ERROR_TRUNCATE = 160;
-
-/** Retire les codes ANSI (couleurs terminal) qui pollueraient le message Teams/Slack */
-const stripAnsi = (s: string): string =>
-  s.replace(/\[[0-9;]*m/g, "");
-
-class TeamNotifReporter implements Reporter {
-  private failures: { title: string; fullTitle: string; error: string }[] = [];
-  private totalTests = 0;
-  private startedAt = Date.now();
-
-  onBegin(_config: FullConfig, suite: Suite) {
+  onBegin(config: FullConfig, suite: Suite) {
+    this.startTime = Date.now();
     this.totalTests = suite.allTests().length;
-    this.startedAt = Date.now();
   }
 
   onTestEnd(test: TestCase, result: TestResult) {
-    if (result.status !== "failed") return;
+    // Compter les tests passés
+    if (result.status === "passed") {
+      this.passedTests++;
+    }
 
-    // Filtre @smoke (tag dans le titre ou le describe)
-    const fullTitle = test.titlePath().join(" › ");
-    if (!fullTitle.includes("@smoke")) return;
+    // Détecter les échecs @smoke
+    if (result.status === "failed" && test.title.includes("@smoke")) {
+      // Limiter à 8 échecs
+      if (this.failedSmokeTests.length < 8) {
+        const rawError = result.error?.message || "Erreur inconnue";
 
-    this.failures.push({
-      title: test.title,
-      fullTitle: test.titlePath().slice(1).join(" › "),
-      error: stripAnsi(result.error?.message ?? "Erreur inconnue"),
-    });
+        // Nettoyer les codes ANSI
+        const cleanError = rawError.replace(/\[[0-9;]*m/g, "");
+
+        // Tronquer à 160 caractères
+        const truncatedError =
+          cleanError.length > 160
+            ? cleanError.substring(0, 160) + "..."
+            : cleanError;
+
+        this.failedSmokeTests.push({
+          title: test.title,
+          error: truncatedError,
+        });
+      }
+    }
   }
 
   async onEnd(result: FullResult) {
-    if (this.failures.length === 0) return;
+    const failedCount = this.failedSmokeTests.length;
 
-    if (TEAMS_WEBHOOK) {
-      await this.sendToTeams(TEAMS_WEBHOOK, result);
+    // Silencieux si aucun échec
+    if (failedCount === 0) {
+      return;
     }
-    if (SLACK_WEBHOOK) {
-      await this.sendToSlack(SLACK_WEBHOOK, result);
+
+    const teamsWebhook = process.env.TEAMS_WEBHOOK_URL;
+    const slackWebhook = process.env.SLACK_WEBHOOK_URL;
+
+    // Silencieux si aucune URL configurée
+    if (!teamsWebhook && !slackWebhook) {
+      return;
     }
-    if (!TEAMS_WEBHOOK && !SLACK_WEBHOOK) {
-      console.warn("⚠️  Aucun webhook configuré — notification ignorée");
+
+    const duration = Math.round((Date.now() - this.startTime) / 1000);
+    const env = process.env.ENV_NAME || "LOCAL";
+    const branch = process.env.GITHUB_REF_NAME || "local";
+    const githubRepo = process.env.GITHUB_REPOSITORY;
+    const githubRunId = process.env.GITHUB_RUN_ID;
+
+    // Envoyer sur Teams si configuré
+    if (teamsWebhook) {
+      await this.sendTeamsNotification(
+        teamsWebhook,
+        failedCount,
+        duration,
+        env,
+        branch,
+        githubRepo,
+        githubRunId,
+      );
+    }
+
+    // Envoyer sur Slack si configuré
+    if (slackWebhook) {
+      await this.sendSlackNotification(
+        slackWebhook,
+        failedCount,
+        duration,
+        env,
+        branch,
+        githubRepo,
+        githubRunId,
+      );
     }
   }
 
-  // ──────────────────────────────────────────────────────────────────────
-  // Teams — MessageCard riche
-  // ──────────────────────────────────────────────────────────────────────
-  private async sendToTeams(url: string, result: FullResult) {
-    const totalFailed = this.failures.length;
-    const totalPassed = this.totalTests - totalFailed;
-    const durationSec = Math.round((Date.now() - this.startedAt) / 1000);
+  private async sendTeamsNotification(
+    webhook: string,
+    failedCount: number,
+    duration: number,
+    env: string,
+    branch: string,
+    githubRepo?: string,
+    githubRunId?: string,
+  ) {
+    const hasMore = this.failedSmokeTests.length === 8;
+    const subtitle = `${this.passedTests} passés / ${this.totalTests} total`;
 
-    const shown = this.failures.slice(0, MAX_FAILURES);
-    const detailsText = shown
-      .map((f) => {
-        const err = f.error.replace(/\n+/g, " ").slice(0, ERROR_TRUNCATE);
-        return `**${f.fullTitle}**\n\`${err}\``;
+    // Construire la section des échecs
+    const failureDetails = this.failedSmokeTests
+      .map((test) => {
+        return `**${test.title}**\n\n\`\`\`\n${test.error}\n\`\`\``;
       })
-      .join("\n\n");
+      .join("\n\n---\n\n");
 
-    const remaining = this.failures.length - MAX_FAILURES;
-    const overflow =
-      remaining > 0
-        ? `\n\n_+ ${remaining} autre(s) échec(s) — voir le rapport complet._`
-        : "";
-
-    const facts: { name: string; value: string }[] = [
-      { name: "Env", value: process.env.ENV_NAME ?? "LOCAL" },
-      {
-        name: "Branche",
-        value:
-          process.env.GITHUB_REF_NAME ?? process.env.GIT_BRANCH ?? "local",
-      },
-      { name: "Durée", value: `${durationSec}s` },
-      {
-        name: "Résultat",
-        value: `${totalPassed} / ${this.totalTests} passés (${totalFailed} échec)`,
-      },
-    ];
-
-    const messageCard: Record<string, unknown> = {
+    const card: any = {
       "@type": "MessageCard",
       "@context": "https://schema.org/extensions",
       themeColor: "D00000",
-      summary: `${totalFailed} test(s) smoke en échec ZotoShop`,
+      summary: `${failedCount} test(s) @smoke en échec`,
       sections: [
         {
-          activityTitle: `🚨 ${totalFailed} test(s) @smoke en échec sur ZotoShop`,
-          activitySubtitle: `${totalPassed} / ${this.totalTests} passés en ${durationSec}s`,
-          facts,
-          markdown: true,
+          activityTitle: `🚨 ${failedCount} test(s) @smoke en échec sur ZotoShop`,
+          activitySubtitle: subtitle,
+          facts: [
+            {
+              name: "Environnement",
+              value: env,
+            },
+            {
+              name: "Branche",
+              value: branch,
+            },
+            {
+              name: "Durée",
+              value: `${duration}s`,
+            },
+            {
+              name: "Résultat",
+              value: `❌ ${failedCount} échec(s)${hasMore ? " (max 8 listés)" : ""}`,
+            },
+          ],
         },
         {
-          title: "**Détails des échecs**",
-          text: detailsText + overflow,
-          markdown: true,
+          activityTitle: "📋 Détails des échecs",
+          text: failureDetails,
         },
       ],
     };
 
-    // Bouton vers le run GitHub si en CI
-    const repo = process.env.GITHUB_REPOSITORY;
-    const runId = process.env.GITHUB_RUN_ID;
-    if (repo && runId) {
-      messageCard.potentialAction = [
+    // Ajouter le bouton GitHub si les variables sont définies
+    if (githubRepo && githubRunId) {
+      const runUrl = `https://github.com/${githubRepo}/actions/runs/${githubRunId}`;
+      card.potentialAction = [
         {
           "@type": "OpenUri",
           name: "🔗 Voir le run GitHub",
           targets: [
             {
               os: "default",
-              uri: `https://github.com/${repo}/actions/runs/${runId}`,
+              uri: runUrl,
             },
           ],
         },
@@ -142,58 +173,75 @@ class TeamNotifReporter implements Reporter {
     }
 
     try {
-      const response = await fetch(url, {
+      const response = await fetch(webhook, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(messageCard),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(card),
       });
+
       if (response.ok) {
-        console.log(
-          `📤 Notif Teams (MessageCard) envoyée (${totalFailed} échec(s))`,
-        );
+        console.log("📤 Notif Teams envoyée");
       } else {
-        const text = await response.text();
         console.error(
-          `❌ Teams webhook HTTP ${response.status} — ${text.slice(0, 200)}`,
+          `❌ Erreur Teams: ${response.status} ${response.statusText}`,
         );
       }
-    } catch (err) {
-      console.error(
-        `❌ Teams webhook : ${err instanceof Error ? err.message : err}`,
-      );
+    } catch (error) {
+      console.error("❌ Erreur lors de l'envoi Teams:", error);
     }
   }
 
-  // ──────────────────────────────────────────────────────────────────────
-  // Slack — format texte simple {text: ...}
-  // ──────────────────────────────────────────────────────────────────────
-  private async sendToSlack(url: string, _result: FullResult) {
-    const totalFailed = this.failures.length;
-    const summary = `🚨 ${totalFailed} test(s) smoke en échec sur ZotoShop`;
-    const details = this.failures
-      .slice(0, MAX_FAILURES)
-      .map((f) => `• ${f.title}\n  \`${f.error.slice(0, ERROR_TRUNCATE)}\``)
-      .join("\n");
+  private async sendSlackNotification(
+    webhook: string,
+    failedCount: number,
+    duration: number,
+    env: string,
+    branch: string,
+    githubRepo?: string,
+    githubRunId?: string,
+  ) {
+    const hasMore = this.failedSmokeTests.length === 8;
+
+    // Construire le message simple
+    let message = `🚨 ${failedCount} test(s) @smoke en échec sur ZotoShop\n`;
+    message += `${this.passedTests} passés / ${this.totalTests} total\n\n`;
+    message += `Environnement: ${env}\n`;
+    message += `Branche: ${branch}\n`;
+    message += `Durée: ${duration}s\n\n`;
+    message += `Échecs${hasMore ? " (max 8 listés)" : ""}:\n`;
+
+    this.failedSmokeTests.forEach((test, index) => {
+      message += `\n${index + 1}. ${test.title}\n`;
+      message += `   ${test.error}\n`;
+    });
+
+    if (githubRepo && githubRunId) {
+      const runUrl = `https://github.com/${githubRepo}/actions/runs/${githubRunId}`;
+      message += `\n🔗 Voir le run: ${runUrl}`;
+    }
 
     try {
-      const response = await fetch(url, {
+      const response = await fetch(webhook, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text: `${summary}\n${details}` }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text: message }),
       });
+
       if (response.ok) {
-        console.log(`📤 Notif Slack envoyée (${totalFailed} échec(s))`);
+        console.log("📤 Notif Slack envoyée");
       } else {
         console.error(
-          `❌ Slack webhook HTTP ${response.status} ${response.statusText}`,
+          `❌ Erreur Slack: ${response.status} ${response.statusText}`,
         );
       }
-    } catch (err) {
-      console.error(
-        `❌ Slack webhook : ${err instanceof Error ? err.message : err}`,
-      );
+    } catch (error) {
+      console.error("❌ Erreur lors de l'envoi Slack:", error);
     }
   }
 }
 
-export default TeamNotifReporter;
+export default TeamNotifsReporter;

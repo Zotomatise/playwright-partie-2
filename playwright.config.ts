@@ -18,6 +18,7 @@ export default defineConfig({
         ["junit", { outputFile: "reports/results.xml" }],
         ["blob"], // pour merger les shards en M9
         ["github"], //  annotations dans les Pull Requests GitHub
+        ["./reporters/team-notifs-reporter.ts"], // Notifications Teams/Slack
       ]
     : [
         // Mode local — visuel + rapide
@@ -35,7 +36,7 @@ export default defineConfig({
             },
           },
         ],
-        ["./reporters/team-notifs-reporter.ts"],
+        ["./reporters/team-notifs-reporter.ts"], // Notifications Teams/Slack
       ],
   use: {
     baseURL: STOREFRONT_URL,
