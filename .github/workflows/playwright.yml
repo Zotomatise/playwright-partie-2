@@ -50,3 +50,34 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 7
+
+  allure-deploy:
+    # On déploie même si des tests ont échoué (sinon on ne verrait jamais les rapports rouges)
+    if: always()
+    # On attend que le job test (smoke-api + smoke-chrome) soit fini
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      # Droits d'écriture nécessaires pour pousser sur la branche gh-pages
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      # Récupère le rapport Playwright uploadé en fin de job test (M9.L1)
+      - name: Download Playwright report
+        uses: actions/download-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report
+      # Lance "allure generate" et produit le site statique dans ./allure-report
+      - name: Generate Allure report
+        uses: simple-elf/allure-report-action@v1.7
+        with:
+          allure_results: allure-results
+          allure_report: allure-report
+      # Pousse le dossier allure-report sur la branche gh-pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # GITHUB_TOKEN est fourni automatiquement par GitHub — pas à créer
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
