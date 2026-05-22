@@ -68,12 +68,25 @@ jobs:
         with:
           name: playwright-report
           path: playwright-report
+
+      # Installation de Java (requis pour Allure)
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "17"
+
+      # Installation d'Allure CLI
+      - name: Install Allure
+        run: |
+          curl -o allure-2.24.0.tgz -OLs https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.24.0/allure-commandline-2.24.0.tgz
+          tar -zxvf allure-2.24.0.tgz -C .
+          sudo ln -s $(pwd)/allure-2.24.0/bin/allure /usr/local/bin/allure
+
       # Lance "allure generate" et produit le site statique dans ./allure-report
       - name: Generate Allure report
-        uses: simple-elf/allure-report-action@v1.7
-        with:
-          allure_results: allure-results
-          allure_report: allure-report
+        run: allure generate allure-results -o allure-report --clean
+
       # Pousse le dossier allure-report sur la branche gh-pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
