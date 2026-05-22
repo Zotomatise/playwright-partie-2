@@ -51,7 +51,9 @@ jobs:
           path: playwright-report/
           retention-days: 7
 
-  allure-deploy:
+  # 🌐 PAGES DEPLOY — publie le rapport Playwright HTML sur GitHub Pages
+  # Dashboard public mis à jour à chaque run, accessible via une URL stable.
+  pages-deploy:
     # On déploie même si des tests ont échoué (sinon on ne verrait jamais les rapports rouges)
     if: always()
     # On attend que le job test (smoke-api + smoke-chrome) soit fini
@@ -62,35 +64,28 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      # Récupère le rapport Playwright uploadé en fin de job test (M9.L1)
+
+      # Récupère le rapport Playwright HTML uploadé en fin de job test
       - name: Download Playwright report
         uses: actions/download-artifact@v4
         with:
           name: playwright-report
           path: playwright-report
 
-      # Installation de Java (requis pour Allure)
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: "temurin"
-          java-version: "17"
-
-      # Installation d'Allure CLI
-      - name: Install Allure
-        run: |
-          curl -o allure-2.24.0.tgz -OLs https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/2.24.0/allure-commandline-2.24.0.tgz
-          tar -zxvf allure-2.24.0.tgz -C .
-          sudo ln -s $(pwd)/allure-2.24.0/bin/allure /usr/local/bin/allure
-
-      # Lance "allure generate" et produit le site statique dans ./allure-report
-      - name: Generate Allure report
-        run: allure generate allure-results -o allure-report --clean
-
-      # Pousse le dossier allure-report sur la branche gh-pages
+      # Pousse le dossier playwright-report/ sur la branche gh-pages
+      # peaceiris/actions-gh-pages crée la branche au 1er run, met à jour ensuite.
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           # GITHUB_TOKEN est fourni automatiquement par GitHub — pas à créer
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./allure-report
+          publish_dir: ./playwright-report
+
+      # Bonus : affiche l'URL Allure en haut de la page du run GHA
+      - name: Add report URL to summary
+        run: |
+          echo "## 📊 Playwright Test Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Voir le rapport : https://zotomatise.github.io/playwright-partie-2/" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "_Mis à jour automatiquement à chaque run._" >> $GITHUB_STEP_SUMMARY
