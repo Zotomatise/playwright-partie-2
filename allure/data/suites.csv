@@ -1,0 +1,7 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","1288","@smoke devrait être connecté grâce au global setup","smoke-chrome","2026-05-25","passed","2026-05-25","Tests de connexion","e2e/connected.spec.ts","",""
+"","1971","@smoke déjà connecté à zotoshop et panier accessible","smoke-chrome","2026-05-25","passed","2026-05-25","Tests de connexion","e2e/connected.spec.ts","",""
+"","8655","@regression @smoke store affiche au moins un produit","smoke-chrome","2026-05-25","passed","2026-05-25","@regression Store page - POM","e2e/store-page.pom.spec.ts","",""
+"","8044","@regression @smoke le premier produit a un prix positif","smoke-chrome","2026-05-25","passed","2026-05-25","@regression Store page - POM","e2e/store-page.pom.spec.ts","",""
+"","1377","@smoke déjà connecté à zotoshop et store accessible","smoke-chrome","2026-05-25","passed","2026-05-25","Tests de connexion","e2e/connected.spec.ts","",""
+"","874","@smoke API liste produits","smoke-api","2026-05-25","passed","2026-05-25","Tests de connexion","api/product.spec.ts","",""
