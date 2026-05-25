@@ -51,6 +51,14 @@ jobs:
           path: playwright-report/
           retention-days: 7
 
+      # 📊 Artefact bonus pour Allure (consommé par le job allure-deploy-real)
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-results
+          path: allure-results/
+          retention-days: 7
+
   # 🌐 PAGES DEPLOY — publie le rapport Playwright HTML sur GitHub Pages
   # Dashboard public mis à jour à chaque run, accessible via une URL stable.
   pages-deploy:
@@ -89,3 +97,50 @@ jobs:
           echo "Voir le rapport : https://zotomatise.github.io/playwright-partie-2/" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "_Mis à jour automatiquement à chaque run._" >> $GITHUB_STEP_SUMMARY
+
+  # ALLURE DEPLOY (vrai dashboard Allure) — sous-dossier /allure/
+  # Cohabite avec le rapport HTML déjà servi à la racine de gh-pages.
+  allure-deploy-real:
+    if: always()
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download allure-results
+        uses: actions/download-artifact@v4
+        with:
+          name: allure-results
+          path: allure-results
+
+      # Java 17 LTS — Allure CLI tourne sur la JVM
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      # Install Allure CLI via npm (wrapper qui gère le binaire automatiquement)
+      - name: Install Allure CLI
+        run: npm install -g allure-commandline
+
+      # Génère le site Allure statique dans ./allure-report
+      - name: Generate Allure report
+        run: allure generate allure-results --clean -o allure-report
+
+      # Push sur gh-pages dans le sous-dossier /allure (cohabitation)
+      - name: Deploy Allure to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
+          destination_dir: allure # 🆕 sous-dossier dédié
+
+      # Bonus : URL Allure dans le résumé du run
+      - name: Add Allure URL to summary
+        run: |
+          echo "## Allure Dashboard" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Voir : https://zotomatise.github.io/playwright-partie-2/allure/" >> $GITHUB_STEP_SUMMARY
