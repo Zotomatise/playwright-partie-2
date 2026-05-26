@@ -13,6 +13,12 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false # On veut voir tous les résultats même si un projet échoue
+      matrix:
+        shard: [1, 2, 3, 4]
+        # 2 projets Playwright : smoke-api (tests API) + smoke-chrome (E2E UI)
+        project: [smoke-api, smoke-chrome]
     steps:
       - uses: actions/checkout@v4
 
@@ -31,7 +37,7 @@ jobs:
         env:
           ZOTOSHOP_API_URL: https://api.zotomatise.com
           ZOTOSHOP_PUBLISHABLE_KEY: pk_0ab41d879415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233
-        run: npx playwright test --project=smoke-api
+        run: npx playwright test --project=smoke-api --shard=${{ matrix.shard }}/4
 
       # SMOKE CHROME (E2E UI) — login UI via global-setup
       # Les credentials de test viennent des GitHub Secrets (M9.L3).
@@ -42,14 +48,14 @@ jobs:
           ZOTOSHOP_PUBLISHABLE_KEY: pk_0ab41d879415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233
           ZOTOSHOP_TEST_EMAIL: ${{ secrets.ZOTOSHOP_TEST_EMAIL }}
           ZOTOSHOP_TEST_PASSWORD: ${{ secrets.ZOTOSHOP_TEST_PASSWORD }}
-        run: npx playwright test --project=smoke-chrome
+        run: npx playwright test --project=smoke-chrome --shard=${{ matrix.shard }}/4
 
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 7
+          name: blob-results-${{ matrix.project }}-shard-${{ matrix.shard }}
+          path: blob-results/
+          retention-days: 1
 
       # 📊 Artefact bonus pour Allure (consommé par le job allure-deploy-real)
       - uses: actions/upload-artifact@v4
@@ -112,7 +118,7 @@ jobs:
       - name: Download allure-results
         uses: actions/download-artifact@v4
         with:
-          name: allure-results
+          name: allure-results-${{ matrix.project }}-shard-${{ matrix.shard }}
           path: allure-results
 
       # Java 17 LTS — Allure CLI tourne sur la JVM
