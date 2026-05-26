@@ -93,7 +93,6 @@ jobs:
         with:
           pattern: blob-results-*
           path: all-blob-reports
-          merge-multiple: true
 
       # Fusionne les rapports blob en un seul rapport HTML
       - name: Merge into HTML Report
