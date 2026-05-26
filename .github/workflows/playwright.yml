@@ -14,11 +14,9 @@ jobs:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: false # On veut voir tous les résultats même si un projet échoue
+      fail-fast: false # On veut voir tous les résultats même si un shard échoue
       matrix:
         shard: [1, 2, 3, 4]
-        # 2 projets Playwright : smoke-api (tests API) + smoke-chrome (E2E UI)
-        project: [smoke-api, smoke-chrome]
     steps:
       - uses: actions/checkout@v4
 
@@ -50,31 +48,28 @@ jobs:
           ZOTOSHOP_TEST_PASSWORD: ${{ secrets.ZOTOSHOP_TEST_PASSWORD }}
         run: npx playwright test --project=smoke-chrome --shard=${{ matrix.shard }}/4
 
+      # Upload blob reports (LE bon dossier = blob-report/, pas blob-results/)
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: blob-results-${{ matrix.project }}-shard-${{ matrix.shard }}
-          path: blob-results/
+          name: blob-report-${{ matrix.shard }}
+          path: blob-report/
           retention-days: 1
 
-      # 📊 Artefact bonus pour Allure (consommé par le job allure-deploy-real)
+      # Artefact bonus pour Allure (consommé par le job allure-deploy-real)
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: allure-results-${{ matrix.project }}-shard-${{ matrix.shard }}
+          name: allure-results-${{ matrix.shard }}
           path: allure-results/
           retention-days: 7
 
-  # 🌐 PAGES DEPLOY — publie le rapport Playwright HTML sur GitHub Pages
-  # Dashboard public mis à jour à chaque run, accessible via une URL stable.
+  # MERGE — fusionne les 4 blobs en 1 rapport HTML unifié + publie sur GitHub Pages
   merge-reports:
-    # On déploie même si des tests ont échoué (sinon on ne verrait jamais les rapports rouges)
     if: always()
-    # On attend que le job test (smoke-api + smoke-chrome) soit fini
     needs: test
     runs-on: ubuntu-latest
     permissions:
-      # Droits d'écriture nécessaires pour pousser sur la branche gh-pages
       contents: write
     steps:
       - uses: actions/checkout@v4
@@ -87,37 +82,34 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Télécharge tous les artefacts blob-results
+      # Télécharge les 4 blobs (blob-report-1, 2, 3, 4) dans all-blob-reports/
       - name: Download blob reports from all shards
         uses: actions/download-artifact@v4
         with:
-          pattern: blob-results-*
+          pattern: blob-report-*
           path: all-blob-reports
           merge-multiple: true
 
-      # Vérifier que les artefacts ont été téléchargés
+      # Vérifier que les artefacts ont été téléchargés (debug)
       - name: Check downloaded artifacts
         run: |
           echo "Contents of all-blob-reports:"
           ls -la all-blob-reports/ || echo "Directory all-blob-reports does not exist"
 
-      # Fusionne les rapports blob en un seul rapport HTML
+      # Fusionne les 4 blobs en un seul rapport HTML
       - name: Merge into HTML Report
         run: npx playwright merge-reports --reporter html ./all-blob-reports
 
-      # Pousse le dossier playwright-report/ sur la branche gh-pages
-      # peaceiris/actions-gh-pages crée la branche au 1er run, met à jour ensuite.
+      # Pousse le rapport HTML mergé sur la branche gh-pages
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          # GITHUB_TOKEN est fourni automatiquement par GitHub — pas à créer
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./playwright-report
 
-      # Bonus : affiche l'URL Allure en haut de la page du run GHA
       - name: Add report URL to summary
         run: |
-          echo "## 📊 Playwright Test Report" >> $GITHUB_STEP_SUMMARY
+          echo "## Playwright Test Report" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "Voir le rapport : https://zotomatise.github.io/playwright-partie-2/" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
@@ -134,7 +126,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Download allure-results
+      # Télécharge les 4 allure-results (allure-results-1, 2, 3, 4) dans allure-results/
+      - name: Download allure-results from all shards
         uses: actions/download-artifact@v4
         with:
           pattern: allure-results-*
@@ -162,9 +155,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report
-          destination_dir: allure # 🆕 sous-dossier dédié
+          destination_dir: allure
 
-      # Bonus : URL Allure dans le résumé du run
       - name: Add Allure URL to summary
         run: |
           echo "## Allure Dashboard" >> $GITHUB_STEP_SUMMARY
