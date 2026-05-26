@@ -61,13 +61,13 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: allure-results
+          name: allure-results-${{ matrix.project }}-shard-${{ matrix.shard }}
           path: allure-results/
           retention-days: 7
 
   # 🌐 PAGES DEPLOY — publie le rapport Playwright HTML sur GitHub Pages
   # Dashboard public mis à jour à chaque run, accessible via une URL stable.
-  pages-deploy:
+  merge-reports:
     # On déploie même si des tests ont échoué (sinon on ne verrait jamais les rapports rouges)
     if: always()
     # On attend que le job test (smoke-api + smoke-chrome) soit fini
@@ -79,12 +79,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Récupère le rapport Playwright HTML uploadé en fin de job test
-      - name: Download Playwright report
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Télécharge tous les artefacts blob-results
+      - name: Download blob reports from all shards
         uses: actions/download-artifact@v4
         with:
-          name: playwright-report
-          path: playwright-report
+          pattern: blob-results-*
+          path: all-blob-reports
+          merge-multiple: true
+
+      # Fusionne les rapports blob en un seul rapport HTML
+      - name: Merge into HTML Report
+        run: npx playwright merge-reports --reporter html ./all-blob-reports
 
       # Pousse le dossier playwright-report/ sur la branche gh-pages
       # peaceiris/actions-gh-pages crée la branche au 1er run, met à jour ensuite.
@@ -118,8 +131,9 @@ jobs:
       - name: Download allure-results
         uses: actions/download-artifact@v4
         with:
-          name: allure-results-${{ matrix.project }}-shard-${{ matrix.shard }}
+          pattern: allure-results-*
           path: allure-results
+          merge-multiple: true
 
       # Java 17 LTS — Allure CLI tourne sur la JVM
       - name: Setup Java
