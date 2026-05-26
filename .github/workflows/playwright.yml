@@ -117,9 +117,10 @@ jobs:
 
   # ALLURE DEPLOY (vrai dashboard Allure) — sous-dossier /allure/
   # Cohabite avec le rapport HTML déjà servi à la racine de gh-pages.
+  # ⚠️ Dépend de merge-reports (pas seulement test) pour éviter conflit push gh-pages.
   allure-deploy-real:
     if: always()
-    needs: test
+    needs: [test, merge-reports]
     runs-on: ubuntu-latest
     permissions:
       contents: write
