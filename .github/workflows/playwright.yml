@@ -94,6 +94,16 @@ jobs:
           pattern: blob-results-*
           path: all-blob-reports
 
+      # Vérifier que les artefacts ont été téléchargés
+      - name: Check downloaded artifacts
+        run: |
+          echo "Contents of all-blob-reports:"
+          ls -la all-blob-reports/ || echo "Directory all-blob-reports does not exist"
+          echo "Current directory:"
+          pwd
+          echo "All files:"
+          ls -la
+
       # Fusionne les rapports blob en un seul rapport HTML
       - name: Merge into HTML Report
         run: npx playwright merge-reports --reporter html ./all-blob-reports
