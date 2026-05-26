@@ -1,0 +1,1 @@
+[@regression  @smoke store affiche au moins un produit] durée: 1006 ms
