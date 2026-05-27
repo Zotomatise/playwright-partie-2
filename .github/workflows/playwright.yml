@@ -85,7 +85,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Récupère tous les blob reports des 4 shards
+      # Récupère tous les blob reports uploadés par les 4 shards
       - name: Download blob reports from all shards
         uses: actions/download-artifact@v4
         with:
@@ -93,8 +93,8 @@ jobs:
           path: all-blob-reports
           merge-multiple: true
 
-      # Fusionne les blobs en un seul rapport HTML
-      - name: Merge blob reports
+      # Fusionne les blobs et génère le rapport HTML
+      - name: Merge reports
         run: npx playwright merge-reports --reporter html ./all-blob-reports
 
       # Pousse le dossier playwright-report/ sur la branche gh-pages
