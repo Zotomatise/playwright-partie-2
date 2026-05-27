@@ -13,10 +13,6 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false # On veut voir tous les résultats même si un shard échoue
-      matrix:
-        shard: [1, 2, 3, 4]
     steps:
       - uses: actions/checkout@v4
 
@@ -35,7 +31,7 @@ jobs:
         env:
           ZOTOSHOP_API_URL: https://api.zotomatise.com
           ZOTOSHOP_PUBLISHABLE_KEY: pk_0ab41d879415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233
-        run: npx playwright test --project=smoke-api --shard=${{ matrix.shard }}/4
+        run: npx playwright test --project=smoke-api
 
       # SMOKE CHROME (E2E UI) — login UI via global-setup
       # Les credentials de test viennent des GitHub Secrets (M9.L3).
@@ -46,26 +42,65 @@ jobs:
           ZOTOSHOP_PUBLISHABLE_KEY: pk_0ab41d879415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233
           ZOTOSHOP_TEST_EMAIL: ${{ secrets.ZOTOSHOP_TEST_EMAIL }}
           ZOTOSHOP_TEST_PASSWORD: ${{ secrets.ZOTOSHOP_TEST_PASSWORD }}
-        run: npx playwright test --project=smoke-chrome --shard=${{ matrix.shard }}/4
+        run: npx playwright test --project=smoke-chrome
 
-      # Upload blob reports (LE bon dossier = blob-report/, pas blob-results/)
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: blob-report-${{ matrix.shard }}
-          path: blob-report/
-          retention-days: 1
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
 
-      # Artefact bonus pour Allure (consommé par le job allure-deploy-real)
+      # 📊 Artefact bonus pour Allure (consommé par le job allure-deploy-real)
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: allure-results-${{ matrix.shard }}
+          name: allure-results
           path: allure-results/
           retention-days: 7
 
-  # MERGE — fusionne les 4 blobs en 1 rapport HTML unifié + publie sur GitHub Pages
-  merge-reports:
+  # 🌐 PAGES DEPLOY — publie le rapport Playwright HTML sur GitHub Pages
+  # Dashboard public mis à jour à chaque run, accessible via une URL stable.
+  pages-deploy:
+    # On déploie même si des tests ont échoué (sinon on ne verrait jamais les rapports rouges)
+    if: always()
+    # On attend que le job test (smoke-api + smoke-chrome) soit fini
+    needs: test
+    runs-on: ubuntu-latest
+    permissions:
+      # Droits d'écriture nécessaires pour pousser sur la branche gh-pages
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      # Récupère le rapport Playwright HTML uploadé en fin de job test
+      - name: Download Playwright report
+        uses: actions/download-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report
+
+      # Pousse le dossier playwright-report/ sur la branche gh-pages
+      # peaceiris/actions-gh-pages crée la branche au 1er run, met à jour ensuite.
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          # GITHUB_TOKEN est fourni automatiquement par GitHub — pas à créer
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./playwright-report
+
+      # Bonus : affiche l'URL Allure en haut de la page du run GHA
+      - name: Add report URL to summary
+        run: |
+          echo "## 📊 Playwright Test Report" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Voir le rapport : https://zotomatise.github.io/playwright-partie-2/" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "_Mis à jour automatiquement à chaque run._" >> $GITHUB_STEP_SUMMARY
+
+  # ALLURE DEPLOY (vrai dashboard Allure) — sous-dossier /allure/
+  # Cohabite avec le rapport HTML déjà servi à la racine de gh-pages.
+  allure-deploy-real:
     if: always()
     needs: test
     runs-on: ubuntu-latest
@@ -74,66 +109,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: npm
-
-      - name: Install dependencies
-        run: npm ci
-
-      # Télécharge les 4 blobs (blob-report-1, 2, 3, 4) dans all-blob-reports/
-      - name: Download blob reports from all shards
+      - name: Download allure-results
         uses: actions/download-artifact@v4
         with:
-          pattern: blob-report-*
-          path: all-blob-reports
-          merge-multiple: true
-
-      # Vérifier que les artefacts ont été téléchargés (debug)
-      - name: Check downloaded artifacts
-        run: |
-          echo "Contents of all-blob-reports:"
-          ls -la all-blob-reports/ || echo "Directory all-blob-reports does not exist"
-
-      # Fusionne les 4 blobs en un seul rapport HTML
-      - name: Merge into HTML Report
-        run: npx playwright merge-reports --reporter html ./all-blob-reports
-
-      # Pousse le rapport HTML mergé sur la branche gh-pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./playwright-report
-
-      - name: Add report URL to summary
-        run: |
-          echo "## Playwright Test Report" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Voir le rapport : https://zotomatise.github.io/playwright-partie-2/" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "_Mis à jour automatiquement à chaque run._" >> $GITHUB_STEP_SUMMARY
-
-  # ALLURE DEPLOY (vrai dashboard Allure) — sous-dossier /allure/
-  # Cohabite avec le rapport HTML déjà servi à la racine de gh-pages.
-  # ⚠️ Dépend de merge-reports (pas seulement test) pour éviter conflit push gh-pages.
-  allure-deploy-real:
-    if: always()
-    needs: [test, merge-reports]
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-
-      # Télécharge les 4 allure-results (allure-results-1, 2, 3, 4) dans allure-results/
-      - name: Download allure-results from all shards
-        uses: actions/download-artifact@v4
-        with:
-          pattern: allure-results-*
+          name: allure-results
           path: allure-results
-          merge-multiple: true
 
       # Java 17 LTS — Allure CLI tourne sur la JVM
       - name: Setup Java
@@ -156,8 +136,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report
-          destination_dir: allure
+          destination_dir: allure # 🆕 sous-dossier dédié
 
+      # Bonus : URL Allure dans le résumé du run
       - name: Add Allure URL to summary
         run: |
           echo "## Allure Dashboard" >> $GITHUB_STEP_SUMMARY
