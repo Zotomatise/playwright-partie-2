@@ -13,6 +13,10 @@ jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4]
     steps:
       - uses: actions/checkout@v4
 
@@ -31,7 +35,7 @@ jobs:
         env:
           ZOTOSHOP_API_URL: https://api.zotomatise.com
           ZOTOSHOP_PUBLISHABLE_KEY: pk_0ab41d879415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233
-        run: npx playwright test --project=smoke-api
+        run: npx playwright test --project=smoke-api --shard=${{ matrix.shard }}/4
 
       # SMOKE CHROME (E2E UI) — login UI via global-setup
       # Les credentials de test viennent des GitHub Secrets (M9.L3).
@@ -42,26 +46,26 @@ jobs:
           ZOTOSHOP_PUBLISHABLE_KEY: pk_0ab41d879415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233
           ZOTOSHOP_TEST_EMAIL: ${{ secrets.ZOTOSHOP_TEST_EMAIL }}
           ZOTOSHOP_TEST_PASSWORD: ${{ secrets.ZOTOSHOP_TEST_PASSWORD }}
-        run: npx playwright test --project=smoke-chrome
+        run: npx playwright test --project=smoke-chrome --shard=${{ matrix.shard }}/4
 
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 7
+          name: blob-report-${{ matrix.shard }}
+          path: blob-report/
+          retention-days: 1
 
       # 📊 Artefact bonus pour Allure (consommé par le job allure-deploy-real)
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: allure-results
+          name: allure-results-${{ matrix.shard }}
           path: allure-results/
           retention-days: 7
 
-  # 🌐 PAGES DEPLOY — publie le rapport Playwright HTML sur GitHub Pages
+  # 🌐 MERGE REPORTS — fusionne les blobs shardés et publie le rapport HTML sur GitHub Pages
   # Dashboard public mis à jour à chaque run, accessible via une URL stable.
-  pages-deploy:
+  merge-reports:
     # On déploie même si des tests ont échoué (sinon on ne verrait jamais les rapports rouges)
     if: always()
     # On attend que le job test (smoke-api + smoke-chrome) soit fini
@@ -73,12 +77,25 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Récupère le rapport Playwright HTML uploadé en fin de job test
-      - name: Download Playwright report
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Récupère tous les blob reports des 4 shards
+      - name: Download blob reports from all shards
         uses: actions/download-artifact@v4
         with:
-          name: playwright-report
-          path: playwright-report
+          pattern: blob-report-*
+          path: all-blob-reports
+          merge-multiple: true
+
+      # Fusionne les blobs en un seul rapport HTML
+      - name: Merge blob reports
+        run: npx playwright merge-reports --reporter html ./all-blob-reports
 
       # Pousse le dossier playwright-report/ sur la branche gh-pages
       # peaceiris/actions-gh-pages crée la branche au 1er run, met à jour ensuite.
@@ -102,7 +119,7 @@ jobs:
   # Cohabite avec le rapport HTML déjà servi à la racine de gh-pages.
   allure-deploy-real:
     if: always()
-    needs: test
+    needs: [test, merge-reports]
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -112,8 +129,9 @@ jobs:
       - name: Download allure-results
         uses: actions/download-artifact@v4
         with:
-          name: allure-results
+          pattern: allure-results-*
           path: allure-results
+          merge-multiple: true
 
       # Java 17 LTS — Allure CLI tourne sur la JVM
       - name: Setup Java

@@ -39,9 +39,6 @@ test.describe("Tests de connexion", () => {
   });
 });
 
-// pour simuler les sharding en CI, on peut lancer les tests API en parallèle (ex: 2 workers) et utiliser l'offset pour répartir les produits à tester. Par exemple, avec 12 produits et 2 workers :
-// - Worker 1 : /store/products?limit=6&offset=0 → produits 1 à 6
-// - Worker 2 : /store/products?limit=6&offset=6 → produits 7 à 12
 test("@smoke API détail d'un produit", async ({ request }) => {
   const response = await request.get("/store/products?limit=1");
   const body = await response.json();
