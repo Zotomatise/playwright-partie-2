@@ -2,7 +2,7 @@ name: Nightly Full Suite
 
 on:
   schedule:
-    - cron: "15 23 * * *"
+    - cron: "15 27 * * *"
   workflow_dispatch: {}
 
 env:
