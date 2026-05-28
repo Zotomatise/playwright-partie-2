@@ -1,0 +1,49 @@
+name: Nightly Full Suite
+
+on:
+  schedule:
+    - cron: "15 23 * * *"
+  workflow_dispatch: {}
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: "true"
+
+jobs:
+  nightly:
+    name: Nightly
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Run Nightly Playwright Suite
+        env:
+          ZOTOSHOP_API_URL: "https://api.zotomatise.com"
+          ZOTOSHOP_PUBLISHABLE_KEY: "pk_0ab41d879415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233"
+          STOREFRONT_URL: ${{ secrets.STOREFRONT_URL }}
+          ZOTOSHOP_TEST_EMAIL: ${{ secrets.ZOTOSHOP_TEST_EMAIL }}
+          ZOTOSHOP_TEST_PASSWORD: ${{ secrets.ZOTOSHOP_TEST_PASSWORD }}
+          TEAMS_WEBHOOK_URL: ${{ secrets.TEAMS_WEBHOOK_URL }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: npx playwright test --project=nightly-chrome
+
+      - name: Upload nightly report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightly-report
+          path: playwright-report/
+          retention-days: 14
