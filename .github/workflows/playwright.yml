@@ -63,16 +63,14 @@ jobs:
           path: allure-results/
           retention-days: 7
 
-  # 🌐 MERGE REPORTS — fusionne les blobs shardés et publie le rapport HTML sur GitHub Pages
-  # Dashboard public mis à jour à chaque run, accessible via une URL stable.
+  # MERGE-REPORTS — fusionne les blobs (HTML) + génère Allure + pousse les 2 dashboards
+  # en UN SEUL commit gh-pages (évite les pages-build cancelled = point d'exclamation jaune)
+  # Nom conservé pour rester compatible avec le required check `merge-reports` (M9.L5)
   merge-reports:
-    # On déploie même si des tests ont échoué (sinon on ne verrait jamais les rapports rouges)
     if: always()
-    # On attend que le job test (smoke-api + smoke-chrome) soit fini
     needs: test
     runs-on: ubuntu-latest
     permissions:
-      # Droits d'écriture nécessaires pour pousser sur la branche gh-pages
       contents: write
     steps:
       - uses: actions/checkout@v4
@@ -85,7 +83,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Récupère tous les blob reports uploadés par les 4 shards
+      # ── 1) HTML Playwright ────────────────────────────────────────────────
       - name: Download blob reports from all shards
         uses: actions/download-artifact@v4
         with:
@@ -93,72 +91,49 @@ jobs:
           path: all-blob-reports
           merge-multiple: true
 
-      # Fusionne les blobs et génère le rapport HTML
-      - name: Merge reports
+      - name: Merge into HTML report
         run: npx playwright merge-reports --reporter html ./all-blob-reports
 
-      # Pousse le dossier playwright-report/ sur la branche gh-pages
-      # peaceiris/actions-gh-pages crée la branche au 1er run, met à jour ensuite.
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          # GITHUB_TOKEN est fourni automatiquement par GitHub — pas à créer
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./playwright-report
-
-      # Bonus : affiche l'URL Allure en haut de la page du run GHA
-      - name: Add report URL to summary
-        run: |
-          echo "## 📊 Playwright Test Report" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Voir le rapport : https://zotomatise.github.io/playwright-partie-2/" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "_Mis à jour automatiquement à chaque run._" >> $GITHUB_STEP_SUMMARY
-
-  # ALLURE DEPLOY (vrai dashboard Allure) — sous-dossier /allure/
-  # Cohabite avec le rapport HTML déjà servi à la racine de gh-pages.
-  allure-deploy-real:
-    if: always()
-    needs: [test, merge-reports]
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Download allure-results
+      # ── 2) Allure ──────────────────────────────────────────────────────────
+      - name: Download allure-results from all shards
         uses: actions/download-artifact@v4
         with:
           pattern: allure-results-*
           path: allure-results
           merge-multiple: true
 
-      # Java 17 LTS — Allure CLI tourne sur la JVM
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
 
-      # Install Allure CLI via npm (wrapper qui gère le binaire automatiquement)
       - name: Install Allure CLI
         run: npm install -g allure-commandline
 
-      # Génère le site Allure statique dans ./allure-report
       - name: Generate Allure report
         run: allure generate allure-results --clean -o allure-report
 
-      # Push sur gh-pages dans le sous-dossier /allure (cohabitation)
-      - name: Deploy Allure to GitHub Pages
+      # ── 3) Combiner les 2 dashboards dans un seul dossier `site/` ────────
+      - name: Prepare combined site (HTML at root + Allure in /allure/)
+        run: |
+          mkdir -p site
+          cp -r playwright-report/* site/
+          mkdir -p site/allure
+          cp -r allure-report/* site/allure/
+
+      # ── 4) UN SEUL push sur gh-pages → UN SEUL pages-build → zéro jaune ──
+      - name: Deploy combined site to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./allure-report
-          destination_dir: allure # 🆕 sous-dossier dédié
+          publish_dir: ./site
 
-      # Bonus : URL Allure dans le résumé du run
-      - name: Add Allure URL to summary
+      - name: Add dashboard URLs to summary
         run: |
-          echo "## Allure Dashboard" >> $GITHUB_STEP_SUMMARY
+          echo "## Dashboards live" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Voir : https://zotomatise.github.io/playwright-partie-2/allure/" >> $GITHUB_STEP_SUMMARY
+          echo "- HTML : https://zotomatise.github.io/playwright-partie-2/" >> $GITHUB_STEP_SUMMARY
+          echo "- Allure : https://zotomatise.github.io/playwright-partie-2/allure/" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "_Mis à jour automatiquement à chaque run._" >> $GITHUB_STEP_SUMMARY
