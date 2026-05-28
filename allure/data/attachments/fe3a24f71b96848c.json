@@ -1,0 +1,2611 @@
+{
+  "products": [
+    {
+      "id": "prod_01KRH8N9BR1RBV2MPXTPYSHEMR",
+      "title": "ZotoBook Pro 16",
+      "subtitle": null,
+      "description": "La bete de course pour les pros. Ecran 16 pouces 4K, processeur i9, GPU RTX 4060, 32Go RAM, SSD 1To.",
+      "handle": "zotobook-pro-16",
+      "is_giftcard": false,
+      "discountable": true,
+      "thumbnail": null,
+      "collection_id": null,
+      "type_id": null,
+      "weight": "2100",
+      "length": null,
+      "height": null,
+      "width": null,
+      "hs_code": null,
+      "origin_country": null,
+      "mid_code": null,
+      "material": null,
+      "created_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-05-13T18:12:52.225Z",
+      "type": null,
+      "collection": null,
+      "options": [
+        {
+          "id": "opt_01KRH8N9BWY5VAV8NDPGD2VXFM",
+          "title": "Configuration",
+          "metadata": null,
+          "product_id": "prod_01KRH8N9BR1RBV2MPXTPYSHEMR",
+          "created_at": "2026-05-13T18:12:52.225Z",
+          "updated_at": "2026-05-13T18:12:52.225Z",
+          "deleted_at": null,
+          "values": [
+            {
+              "id": "optval_01KRH8N9BWYGC27BSBHYJAVWKW",
+              "value": "Standard",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BWY5VAV8NDPGD2VXFM",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BW0Y02PAA2J19ZAFHH",
+              "value": "Max",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BWY5VAV8NDPGD2VXFM",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ],
+      "tags": [],
+      "images": [],
+      "variants": [
+        {
+          "id": "variant_01KRH8N9E46GQ7F0RB5KRX681P",
+          "title": "Max (64Go/2To)",
+          "sku": "ZBOOK-PRO-MAX",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BR1RBV2MPXTPYSHEMR",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BW0Y02PAA2J19ZAFHH",
+              "value": "Max",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BWY5VAV8NDPGD2VXFM",
+              "option": {
+                "id": "opt_01KRH8N9BWY5VAV8NDPGD2VXFM",
+                "title": "Configuration",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BR1RBV2MPXTPYSHEMR",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E4TM9CZSEZ8DH59FGG",
+          "title": "Standard (32Go/1To)",
+          "sku": "ZBOOK-PRO-STD",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BR1RBV2MPXTPYSHEMR",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BWYGC27BSBHYJAVWKW",
+              "value": "Standard",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BWY5VAV8NDPGD2VXFM",
+              "option": {
+                "id": "opt_01KRH8N9BWY5VAV8NDPGD2VXFM",
+                "title": "Configuration",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BR1RBV2MPXTPYSHEMR",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_01KRH8N9BR6R8T3H7SVZH4G797",
+      "title": "ZotoPhone Pro 15",
+      "subtitle": null,
+      "description": "Le smartphone ultime pour les professionnels. Ecran AMOLED 6.7 pouces, 256Go, double SIM, charge rapide 65W.",
+      "handle": "zotophone-pro-15",
+      "is_giftcard": false,
+      "discountable": true,
+      "thumbnail": null,
+      "collection_id": null,
+      "type_id": null,
+      "weight": "200",
+      "length": null,
+      "height": null,
+      "width": null,
+      "hs_code": null,
+      "origin_country": null,
+      "mid_code": null,
+      "material": null,
+      "created_at": "2026-05-13T18:12:52.224Z",
+      "updated_at": "2026-05-13T18:12:52.224Z",
+      "type": null,
+      "collection": null,
+      "options": [
+        {
+          "id": "opt_01KRH8N9BTRB8XG6H92QJS08MQ",
+          "title": "Stockage",
+          "metadata": null,
+          "product_id": "prod_01KRH8N9BR6R8T3H7SVZH4G797",
+          "created_at": "2026-05-13T18:12:52.225Z",
+          "updated_at": "2026-05-13T18:12:52.225Z",
+          "deleted_at": null,
+          "values": [
+            {
+              "id": "optval_01KRH8N9BTA2SWM18W96HVPQ18",
+              "value": "128Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BTRB8XG6H92QJS08MQ",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BTFE5T79ZAV8XPYC2V",
+              "value": "256Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BTRB8XG6H92QJS08MQ",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BTCS41TBNVYQ7GNW4Y",
+              "value": "512Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BTRB8XG6H92QJS08MQ",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "opt_01KRH8N9BTWVCTJACRJXH1GCZM",
+          "title": "Couleur",
+          "metadata": null,
+          "product_id": "prod_01KRH8N9BR6R8T3H7SVZH4G797",
+          "created_at": "2026-05-13T18:12:52.225Z",
+          "updated_at": "2026-05-13T18:12:52.225Z",
+          "deleted_at": null,
+          "values": [
+            {
+              "id": "optval_01KRH8N9BT0EV1KAHKZ2Y2N3PW",
+              "value": "Noir",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BTWVCTJACRJXH1GCZM",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BTG8JS4C9Y5YTRF3ZJ",
+              "value": "Bleu",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BTWVCTJACRJXH1GCZM",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BTGTT9J23PH72R0FBX",
+              "value": "Blanc",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BTWVCTJACRJXH1GCZM",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ],
+      "tags": [],
+      "images": [],
+      "variants": [
+        {
+          "id": "variant_01KRH8N9E2CXGRSG9R9YHWWXBT",
+          "title": "128Go / Noir",
+          "sku": "ZPHONE-128-BLK",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BR6R8T3H7SVZH4G797",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BTA2SWM18W96HVPQ18",
+              "value": "128Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BTRB8XG6H92QJS08MQ",
+              "option": {
+                "id": "opt_01KRH8N9BTRB8XG6H92QJS08MQ",
+                "title": "Stockage",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BR6R8T3H7SVZH4G797",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BT0EV1KAHKZ2Y2N3PW",
+              "value": "Noir",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BTWVCTJACRJXH1GCZM",
+              "option": {
+                "id": "opt_01KRH8N9BTWVCTJACRJXH1GCZM",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BR6R8T3H7SVZH4G797",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E2W8B0KE21HET55X99",
+          "title": "256Go / Noir",
+          "sku": "ZPHONE-256-BLK",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BR6R8T3H7SVZH4G797",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BTFE5T79ZAV8XPYC2V",
+              "value": "256Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BTRB8XG6H92QJS08MQ",
+              "option": {
+                "id": "opt_01KRH8N9BTRB8XG6H92QJS08MQ",
+                "title": "Stockage",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BR6R8T3H7SVZH4G797",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BT0EV1KAHKZ2Y2N3PW",
+              "value": "Noir",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BTWVCTJACRJXH1GCZM",
+              "option": {
+                "id": "opt_01KRH8N9BTWVCTJACRJXH1GCZM",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BR6R8T3H7SVZH4G797",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E3EERGEF02NE7A2P68",
+          "title": "512Go / Blanc",
+          "sku": "ZPHONE-512-WHT",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BR6R8T3H7SVZH4G797",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BTCS41TBNVYQ7GNW4Y",
+              "value": "512Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BTRB8XG6H92QJS08MQ",
+              "option": {
+                "id": "opt_01KRH8N9BTRB8XG6H92QJS08MQ",
+                "title": "Stockage",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BR6R8T3H7SVZH4G797",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BTGTT9J23PH72R0FBX",
+              "value": "Blanc",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BTWVCTJACRJXH1GCZM",
+              "option": {
+                "id": "opt_01KRH8N9BTWVCTJACRJXH1GCZM",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BR6R8T3H7SVZH4G797",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E3PDZEP507MCM020YV",
+          "title": "256Go / Bleu",
+          "sku": "ZPHONE-256-BLU",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BR6R8T3H7SVZH4G797",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BTFE5T79ZAV8XPYC2V",
+              "value": "256Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BTRB8XG6H92QJS08MQ",
+              "option": {
+                "id": "opt_01KRH8N9BTRB8XG6H92QJS08MQ",
+                "title": "Stockage",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BR6R8T3H7SVZH4G797",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BTG8JS4C9Y5YTRF3ZJ",
+              "value": "Bleu",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BTWVCTJACRJXH1GCZM",
+              "option": {
+                "id": "opt_01KRH8N9BTWVCTJACRJXH1GCZM",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BR6R8T3H7SVZH4G797",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_01KRH8N9BR6WEVY4M55HQ91YH7",
+      "title": "ZotoCharge 65W",
+      "subtitle": null,
+      "description": "Chargeur rapide USB-C 65W GaN. Compact, compatible laptop et smartphone. Double port.",
+      "handle": "zotocharge-65w",
+      "is_giftcard": false,
+      "discountable": true,
+      "thumbnail": null,
+      "collection_id": null,
+      "type_id": null,
+      "weight": "120",
+      "length": null,
+      "height": null,
+      "width": null,
+      "hs_code": null,
+      "origin_country": null,
+      "mid_code": null,
+      "material": null,
+      "created_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-05-13T18:12:52.225Z",
+      "type": null,
+      "collection": null,
+      "options": [
+        {
+          "id": "opt_01KRH8N9BX26A1QTVYYR1TKC3J",
+          "title": "Type",
+          "metadata": null,
+          "product_id": "prod_01KRH8N9BR6WEVY4M55HQ91YH7",
+          "created_at": "2026-05-13T18:12:52.226Z",
+          "updated_at": "2026-05-13T18:12:52.226Z",
+          "deleted_at": null,
+          "values": [
+            {
+              "id": "optval_01KRH8N9BX7V8BNE4YKG6AB55F",
+              "value": "Simple (1 port)",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BX26A1QTVYYR1TKC3J",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BX7DH5R4ST1BG8D7QH",
+              "value": "Double (2 ports)",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BX26A1QTVYYR1TKC3J",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ],
+      "tags": [],
+      "images": [],
+      "variants": [
+        {
+          "id": "variant_01KRH8N9E45P5X5CH0886ANGNR",
+          "title": "Simple (1 port)",
+          "sku": "ZCHARGE-1P",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BR6WEVY4M55HQ91YH7",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BX7V8BNE4YKG6AB55F",
+              "value": "Simple (1 port)",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BX26A1QTVYYR1TKC3J",
+              "option": {
+                "id": "opt_01KRH8N9BX26A1QTVYYR1TKC3J",
+                "title": "Type",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BR6WEVY4M55HQ91YH7",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E4KC45YAATNFR8D83J",
+          "title": "Double (2 ports)",
+          "sku": "ZCHARGE-2P",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BR6WEVY4M55HQ91YH7",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BX7DH5R4ST1BG8D7QH",
+              "value": "Double (2 ports)",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BX26A1QTVYYR1TKC3J",
+              "option": {
+                "id": "opt_01KRH8N9BX26A1QTVYYR1TKC3J",
+                "title": "Type",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BR6WEVY4M55HQ91YH7",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_01KRH8N9BR8Y99MNCE4QHA3B0F",
+      "title": "ZotoPad Controller",
+      "subtitle": null,
+      "description": "Manette gaming sans fil. Compatible PC, mobile, console. Vibration HD, gyroscope, autonomie 20h.",
+      "handle": "zotopad-controller",
+      "is_giftcard": false,
+      "discountable": true,
+      "thumbnail": null,
+      "collection_id": null,
+      "type_id": null,
+      "weight": "280",
+      "length": null,
+      "height": null,
+      "width": null,
+      "hs_code": null,
+      "origin_country": null,
+      "mid_code": null,
+      "material": null,
+      "created_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-05-13T18:12:52.225Z",
+      "type": null,
+      "collection": null,
+      "options": [
+        {
+          "id": "opt_01KRH8N9BZ6JB6TN23WRHTV3V9",
+          "title": "Couleur",
+          "metadata": null,
+          "product_id": "prod_01KRH8N9BR8Y99MNCE4QHA3B0F",
+          "created_at": "2026-05-13T18:12:52.226Z",
+          "updated_at": "2026-05-13T18:12:52.226Z",
+          "deleted_at": null,
+          "values": [
+            {
+              "id": "optval_01KRH8N9BY3TM3TW407X8YVEDW",
+              "value": "Noir Carbon",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BZ6JB6TN23WRHTV3V9",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BZVSS52EY8TCWTB78A",
+              "value": "Blanc Arctique",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BZ6JB6TN23WRHTV3V9",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BZF36H4SYZTNQ4AJRS",
+              "value": "Rouge Rubis",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BZ6JB6TN23WRHTV3V9",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ],
+      "tags": [],
+      "images": [],
+      "variants": [
+        {
+          "id": "variant_01KRH8N9E5S7JQ5G81VPCTZF47",
+          "title": "Noir Carbon",
+          "sku": "ZPAD-BLK",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BR8Y99MNCE4QHA3B0F",
+          "created_at": "2026-05-13T18:12:52.296Z",
+          "updated_at": "2026-05-13T18:12:52.296Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BY3TM3TW407X8YVEDW",
+              "value": "Noir Carbon",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BZ6JB6TN23WRHTV3V9",
+              "option": {
+                "id": "opt_01KRH8N9BZ6JB6TN23WRHTV3V9",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BR8Y99MNCE4QHA3B0F",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E641F645PGMTY29DDN",
+          "title": "Rouge Rubis",
+          "sku": "ZPAD-RED",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BR8Y99MNCE4QHA3B0F",
+          "created_at": "2026-05-13T18:12:52.296Z",
+          "updated_at": "2026-05-13T18:12:52.296Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BZF36H4SYZTNQ4AJRS",
+              "value": "Rouge Rubis",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BZ6JB6TN23WRHTV3V9",
+              "option": {
+                "id": "opt_01KRH8N9BZ6JB6TN23WRHTV3V9",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BR8Y99MNCE4QHA3B0F",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E6W6WRNKGBP35XKJAM",
+          "title": "Blanc Arctique",
+          "sku": "ZPAD-WHT",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BR8Y99MNCE4QHA3B0F",
+          "created_at": "2026-05-13T18:12:52.296Z",
+          "updated_at": "2026-05-13T18:12:52.296Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BZVSS52EY8TCWTB78A",
+              "value": "Blanc Arctique",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BZ6JB6TN23WRHTV3V9",
+              "option": {
+                "id": "opt_01KRH8N9BZ6JB6TN23WRHTV3V9",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BR8Y99MNCE4QHA3B0F",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_01KRH8N9BRC2ZZRYSRWSTMDGEQ",
+      "title": "ZotoPhone Lite",
+      "subtitle": null,
+      "description": "Un smartphone accessible et performant. Ecran 6.1 pouces, 64Go, batterie longue duree 5000mAh.",
+      "handle": "zotophone-lite",
+      "is_giftcard": false,
+      "discountable": true,
+      "thumbnail": null,
+      "collection_id": null,
+      "type_id": null,
+      "weight": "180",
+      "length": null,
+      "height": null,
+      "width": null,
+      "hs_code": null,
+      "origin_country": null,
+      "mid_code": null,
+      "material": null,
+      "created_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-05-13T18:12:52.225Z",
+      "type": null,
+      "collection": null,
+      "options": [
+        {
+          "id": "opt_01KRH8N9BV8K4F69E07HT4ZHQ6",
+          "title": "Stockage",
+          "metadata": null,
+          "product_id": "prod_01KRH8N9BRC2ZZRYSRWSTMDGEQ",
+          "created_at": "2026-05-13T18:12:52.225Z",
+          "updated_at": "2026-05-13T18:12:52.225Z",
+          "deleted_at": null,
+          "values": [
+            {
+              "id": "optval_01KRH8N9BVW1HVK9RF2NPVA8Z9",
+              "value": "64Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BV8K4F69E07HT4ZHQ6",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BVHRNH8R88HMDVX4RS",
+              "value": "128Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BV8K4F69E07HT4ZHQ6",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "opt_01KRH8N9BVEB6A7EYZFE1BGR9P",
+          "title": "Couleur",
+          "metadata": null,
+          "product_id": "prod_01KRH8N9BRC2ZZRYSRWSTMDGEQ",
+          "created_at": "2026-05-13T18:12:52.225Z",
+          "updated_at": "2026-05-13T18:12:52.225Z",
+          "deleted_at": null,
+          "values": [
+            {
+              "id": "optval_01KRH8N9BVFX8W4X9BPG4PZDZ3",
+              "value": "Vert",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BVEB6A7EYZFE1BGR9P",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BVDTK1JQEY82MN2D76",
+              "value": "Rose",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BVEB6A7EYZFE1BGR9P",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BVAFR6GNSP0JNAH4G5",
+              "value": "Noir",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BVEB6A7EYZFE1BGR9P",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ],
+      "tags": [],
+      "images": [],
+      "variants": [
+        {
+          "id": "variant_01KRH8N9E38A3QD16S11DFKC3J",
+          "title": "64Go / Rose",
+          "sku": "ZLITE-64-PNK",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRC2ZZRYSRWSTMDGEQ",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BVW1HVK9RF2NPVA8Z9",
+              "value": "64Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BV8K4F69E07HT4ZHQ6",
+              "option": {
+                "id": "opt_01KRH8N9BV8K4F69E07HT4ZHQ6",
+                "title": "Stockage",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRC2ZZRYSRWSTMDGEQ",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BVDTK1JQEY82MN2D76",
+              "value": "Rose",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BVEB6A7EYZFE1BGR9P",
+              "option": {
+                "id": "opt_01KRH8N9BVEB6A7EYZFE1BGR9P",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRC2ZZRYSRWSTMDGEQ",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E39R4NGN21Q8YY6HYF",
+          "title": "128Go / Noir",
+          "sku": "ZLITE-128-BLK",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRC2ZZRYSRWSTMDGEQ",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BVHRNH8R88HMDVX4RS",
+              "value": "128Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BV8K4F69E07HT4ZHQ6",
+              "option": {
+                "id": "opt_01KRH8N9BV8K4F69E07HT4ZHQ6",
+                "title": "Stockage",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRC2ZZRYSRWSTMDGEQ",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BVAFR6GNSP0JNAH4G5",
+              "value": "Noir",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BVEB6A7EYZFE1BGR9P",
+              "option": {
+                "id": "opt_01KRH8N9BVEB6A7EYZFE1BGR9P",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRC2ZZRYSRWSTMDGEQ",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E3NYZNP7037K2DT7QQ",
+          "title": "64Go / Vert",
+          "sku": "ZLITE-64-GRN",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRC2ZZRYSRWSTMDGEQ",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BVW1HVK9RF2NPVA8Z9",
+              "value": "64Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BV8K4F69E07HT4ZHQ6",
+              "option": {
+                "id": "opt_01KRH8N9BV8K4F69E07HT4ZHQ6",
+                "title": "Stockage",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRC2ZZRYSRWSTMDGEQ",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BVFX8W4X9BPG4PZDZ3",
+              "value": "Vert",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BVEB6A7EYZFE1BGR9P",
+              "option": {
+                "id": "opt_01KRH8N9BVEB6A7EYZFE1BGR9P",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRC2ZZRYSRWSTMDGEQ",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_01KRH8N9BRCS8TDT7ZARNFK465",
+      "title": "ZotoCoque Protection",
+      "subtitle": null,
+      "description": "Coque de protection robuste pour ZotoPhone. Anti-choc, grip texture, compatible charge sans fil.",
+      "handle": "zotocoque",
+      "is_giftcard": false,
+      "discountable": true,
+      "thumbnail": null,
+      "collection_id": null,
+      "type_id": null,
+      "weight": "50",
+      "length": null,
+      "height": null,
+      "width": null,
+      "hs_code": null,
+      "origin_country": null,
+      "mid_code": null,
+      "material": null,
+      "created_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-05-13T18:12:52.225Z",
+      "type": null,
+      "collection": null,
+      "options": [
+        {
+          "id": "opt_01KRH8N9BWK6QB2K0MVZQ8FNCP",
+          "title": "Modele",
+          "metadata": null,
+          "product_id": "prod_01KRH8N9BRCS8TDT7ZARNFK465",
+          "created_at": "2026-05-13T18:12:52.225Z",
+          "updated_at": "2026-05-13T18:12:52.225Z",
+          "deleted_at": null,
+          "values": [
+            {
+              "id": "optval_01KRH8N9BW146AHV2WWRCTNX10",
+              "value": "Pro 15",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BWK6QB2K0MVZQ8FNCP",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BW3Z64D79KP58CCA04",
+              "value": "Lite",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BWK6QB2K0MVZQ8FNCP",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "opt_01KRH8N9BX3RETRFWFCQ5VKMY8",
+          "title": "Couleur",
+          "metadata": null,
+          "product_id": "prod_01KRH8N9BRCS8TDT7ZARNFK465",
+          "created_at": "2026-05-13T18:12:52.225Z",
+          "updated_at": "2026-05-13T18:12:52.225Z",
+          "deleted_at": null,
+          "values": [
+            {
+              "id": "optval_01KRH8N9BXM1GYDY4TCGYQGA9B",
+              "value": "Transparent",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BX3RETRFWFCQ5VKMY8",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BXZY2A1BX8BKE7GGHW",
+              "value": "Noir Mat",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BX3RETRFWFCQ5VKMY8",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BXT7XF8P81462BAFMG",
+              "value": "Rouge",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BX3RETRFWFCQ5VKMY8",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ],
+      "tags": [],
+      "images": [],
+      "variants": [
+        {
+          "id": "variant_01KRH8N9E43G27DH2T157DAZ9H",
+          "title": "Pro 15 / Noir Mat",
+          "sku": "ZCOQUE-PRO-BLK",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRCS8TDT7ZARNFK465",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BW146AHV2WWRCTNX10",
+              "value": "Pro 15",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BWK6QB2K0MVZQ8FNCP",
+              "option": {
+                "id": "opt_01KRH8N9BWK6QB2K0MVZQ8FNCP",
+                "title": "Modele",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRCS8TDT7ZARNFK465",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BXZY2A1BX8BKE7GGHW",
+              "value": "Noir Mat",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BX3RETRFWFCQ5VKMY8",
+              "option": {
+                "id": "opt_01KRH8N9BX3RETRFWFCQ5VKMY8",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRCS8TDT7ZARNFK465",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E443S1AKV6X7AW4DVD",
+          "title": "Lite / Rouge",
+          "sku": "ZCOQUE-LITE-RED",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRCS8TDT7ZARNFK465",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BW3Z64D79KP58CCA04",
+              "value": "Lite",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BWK6QB2K0MVZQ8FNCP",
+              "option": {
+                "id": "opt_01KRH8N9BWK6QB2K0MVZQ8FNCP",
+                "title": "Modele",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRCS8TDT7ZARNFK465",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BXT7XF8P81462BAFMG",
+              "value": "Rouge",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BX3RETRFWFCQ5VKMY8",
+              "option": {
+                "id": "opt_01KRH8N9BX3RETRFWFCQ5VKMY8",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRCS8TDT7ZARNFK465",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E48EA18Y8BD8A701NM",
+          "title": "Lite / Transparent",
+          "sku": "ZCOQUE-LITE-TRANS",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRCS8TDT7ZARNFK465",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BW3Z64D79KP58CCA04",
+              "value": "Lite",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BWK6QB2K0MVZQ8FNCP",
+              "option": {
+                "id": "opt_01KRH8N9BWK6QB2K0MVZQ8FNCP",
+                "title": "Modele",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRCS8TDT7ZARNFK465",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BXM1GYDY4TCGYQGA9B",
+              "value": "Transparent",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BX3RETRFWFCQ5VKMY8",
+              "option": {
+                "id": "opt_01KRH8N9BX3RETRFWFCQ5VKMY8",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRCS8TDT7ZARNFK465",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E48ENBZCVWKCZD8E73",
+          "title": "Pro 15 / Transparent",
+          "sku": "ZCOQUE-PRO-TRANS",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRCS8TDT7ZARNFK465",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BW146AHV2WWRCTNX10",
+              "value": "Pro 15",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BWK6QB2K0MVZQ8FNCP",
+              "option": {
+                "id": "opt_01KRH8N9BWK6QB2K0MVZQ8FNCP",
+                "title": "Modele",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRCS8TDT7ZARNFK465",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BXM1GYDY4TCGYQGA9B",
+              "value": "Transparent",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BX3RETRFWFCQ5VKMY8",
+              "option": {
+                "id": "opt_01KRH8N9BX3RETRFWFCQ5VKMY8",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRCS8TDT7ZARNFK465",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_01KRH8N9BRKJWH54QDXE3RSJ0D",
+      "title": "ZotoBook Air 14",
+      "subtitle": null,
+      "description": "Ultrabook leger pour le quotidien. Ecran 14 pouces IPS, processeur i5, 16Go RAM, SSD 512Go. Parfait pour les developpeurs.",
+      "handle": "zotobook-air-14",
+      "is_giftcard": false,
+      "discountable": true,
+      "thumbnail": null,
+      "collection_id": null,
+      "type_id": null,
+      "weight": "1300",
+      "length": null,
+      "height": null,
+      "width": null,
+      "hs_code": null,
+      "origin_country": null,
+      "mid_code": null,
+      "material": null,
+      "created_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-05-13T18:12:52.225Z",
+      "type": null,
+      "collection": null,
+      "options": [
+        {
+          "id": "opt_01KRH8N9BWF0X68X2ZCPC95DT5",
+          "title": "RAM",
+          "metadata": null,
+          "product_id": "prod_01KRH8N9BRKJWH54QDXE3RSJ0D",
+          "created_at": "2026-05-13T18:12:52.225Z",
+          "updated_at": "2026-05-13T18:12:52.225Z",
+          "deleted_at": null,
+          "values": [
+            {
+              "id": "optval_01KRH8N9BVBP4X4NM1C0XZ14HE",
+              "value": "8Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BWF0X68X2ZCPC95DT5",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BW34FZJMHD83YNE0JN",
+              "value": "16Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BWF0X68X2ZCPC95DT5",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BW8FPQ3XPGRVW9WJNE",
+              "value": "32Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BWF0X68X2ZCPC95DT5",
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ],
+      "tags": [],
+      "images": [],
+      "variants": [
+        {
+          "id": "variant_01KRH8N9E32QPADR0W5V9X2Z5Y",
+          "title": "8Go RAM",
+          "sku": "ZBOOK-AIR-8",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRKJWH54QDXE3RSJ0D",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BVBP4X4NM1C0XZ14HE",
+              "value": "8Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BWF0X68X2ZCPC95DT5",
+              "option": {
+                "id": "opt_01KRH8N9BWF0X68X2ZCPC95DT5",
+                "title": "RAM",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRKJWH54QDXE3RSJ0D",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E378AZ0GS16F7Z94B4",
+          "title": "16Go RAM",
+          "sku": "ZBOOK-AIR-16",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRKJWH54QDXE3RSJ0D",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BW34FZJMHD83YNE0JN",
+              "value": "16Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BWF0X68X2ZCPC95DT5",
+              "option": {
+                "id": "opt_01KRH8N9BWF0X68X2ZCPC95DT5",
+                "title": "RAM",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRKJWH54QDXE3RSJ0D",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E3D81207E4H0DJYNWW",
+          "title": "32Go RAM",
+          "sku": "ZBOOK-AIR-32",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRKJWH54QDXE3RSJ0D",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BW8FPQ3XPGRVW9WJNE",
+              "value": "32Go",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BWF0X68X2ZCPC95DT5",
+              "option": {
+                "id": "opt_01KRH8N9BWF0X68X2ZCPC95DT5",
+                "title": "RAM",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRKJWH54QDXE3RSJ0D",
+                "created_at": "2026-05-13T18:12:52.225Z",
+                "updated_at": "2026-05-13T18:12:52.225Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.225Z",
+              "updated_at": "2026-05-13T18:12:52.225Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_01KRH8N9BRPSZ9A11KT42Z2ZGY",
+      "title": "ZotoMouse Precision",
+      "subtitle": null,
+      "description": "Souris gaming ultra-legere 58g. Capteur 26000 DPI, switches optiques, cable paracord.",
+      "handle": "zotomouse-precision",
+      "is_giftcard": false,
+      "discountable": true,
+      "thumbnail": null,
+      "collection_id": null,
+      "type_id": null,
+      "weight": "58",
+      "length": null,
+      "height": null,
+      "width": null,
+      "hs_code": null,
+      "origin_country": null,
+      "mid_code": null,
+      "material": null,
+      "created_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-05-13T18:12:52.225Z",
+      "type": null,
+      "collection": null,
+      "options": [
+        {
+          "id": "opt_01KRH8N9C0P4XEBC8AETXTQPJ7",
+          "title": "Connexion",
+          "metadata": null,
+          "product_id": "prod_01KRH8N9BRPSZ9A11KT42Z2ZGY",
+          "created_at": "2026-05-13T18:12:52.226Z",
+          "updated_at": "2026-05-13T18:12:52.226Z",
+          "deleted_at": null,
+          "values": [
+            {
+              "id": "optval_01KRH8N9BZVT3N48PRGGWEA2GD",
+              "value": "Filaire",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9C0P4XEBC8AETXTQPJ7",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9C08YDYECS55J7638TB",
+              "value": "Sans fil",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9C0P4XEBC8AETXTQPJ7",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ],
+      "tags": [],
+      "images": [],
+      "variants": [
+        {
+          "id": "variant_01KRH8N9E6EK29Y869JQFCW395",
+          "title": "Filaire",
+          "sku": "ZMOUSE-WIRE",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRPSZ9A11KT42Z2ZGY",
+          "created_at": "2026-05-13T18:12:52.296Z",
+          "updated_at": "2026-05-13T18:12:52.296Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BZVT3N48PRGGWEA2GD",
+              "value": "Filaire",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9C0P4XEBC8AETXTQPJ7",
+              "option": {
+                "id": "opt_01KRH8N9C0P4XEBC8AETXTQPJ7",
+                "title": "Connexion",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRPSZ9A11KT42Z2ZGY",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E6R7BP3WPEJ6K4PTWQ",
+          "title": "Sans fil",
+          "sku": "ZMOUSE-WIFI",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRPSZ9A11KT42Z2ZGY",
+          "created_at": "2026-05-13T18:12:52.296Z",
+          "updated_at": "2026-05-13T18:12:52.296Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9C08YDYECS55J7638TB",
+              "value": "Sans fil",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9C0P4XEBC8AETXTQPJ7",
+              "option": {
+                "id": "opt_01KRH8N9C0P4XEBC8AETXTQPJ7",
+                "title": "Connexion",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRPSZ9A11KT42Z2ZGY",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_01KRH8N9BRRW95YV6KZHW6607E",
+      "title": "ZotoScreen 27 QHD",
+      "subtitle": null,
+      "description": "Ecran gaming 27 pouces QHD 165Hz. Temps de reponse 1ms, HDR400, FreeSync Premium.",
+      "handle": "zotoscreen-27",
+      "is_giftcard": false,
+      "discountable": true,
+      "thumbnail": null,
+      "collection_id": null,
+      "type_id": null,
+      "weight": "5500",
+      "length": null,
+      "height": null,
+      "width": null,
+      "hs_code": null,
+      "origin_country": null,
+      "mid_code": null,
+      "material": null,
+      "created_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-05-13T18:12:52.225Z",
+      "type": null,
+      "collection": null,
+      "options": [
+        {
+          "id": "opt_01KRH8N9BZ3GA26YVDE3PJKCNT",
+          "title": "Dalle",
+          "metadata": null,
+          "product_id": "prod_01KRH8N9BRRW95YV6KZHW6607E",
+          "created_at": "2026-05-13T18:12:52.226Z",
+          "updated_at": "2026-05-13T18:12:52.226Z",
+          "deleted_at": null,
+          "values": [
+            {
+              "id": "optval_01KRH8N9BZCBVAHN0XMVQ58GQC",
+              "value": "IPS",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BZ3GA26YVDE3PJKCNT",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BZ0W6YSB66JBH9J22Q",
+              "value": "VA",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BZ3GA26YVDE3PJKCNT",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ],
+      "tags": [],
+      "images": [],
+      "variants": [
+        {
+          "id": "variant_01KRH8N9E6088669JRR0GSR934",
+          "title": "IPS 165Hz",
+          "sku": "ZSCREEN-IPS",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRRW95YV6KZHW6607E",
+          "created_at": "2026-05-13T18:12:52.296Z",
+          "updated_at": "2026-05-13T18:12:52.296Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BZCBVAHN0XMVQ58GQC",
+              "value": "IPS",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BZ3GA26YVDE3PJKCNT",
+              "option": {
+                "id": "opt_01KRH8N9BZ3GA26YVDE3PJKCNT",
+                "title": "Dalle",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRRW95YV6KZHW6607E",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E6GNRC2FMC3N1CAGJT",
+          "title": "VA 144Hz",
+          "sku": "ZSCREEN-VA",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRRW95YV6KZHW6607E",
+          "created_at": "2026-05-13T18:12:52.296Z",
+          "updated_at": "2026-05-13T18:12:52.296Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BZ0W6YSB66JBH9J22Q",
+              "value": "VA",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BZ3GA26YVDE3PJKCNT",
+              "option": {
+                "id": "opt_01KRH8N9BZ3GA26YVDE3PJKCNT",
+                "title": "Dalle",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRRW95YV6KZHW6607E",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_01KRH8N9BRSHG7EF4BDAP69QDP",
+      "title": "ZotoBuds Pro",
+      "subtitle": null,
+      "description": "Ecouteurs sans fil avec ANC (reduction de bruit active). Autonomie 8h + 24h avec boitier. Bluetooth 5.3.",
+      "handle": "zotobuds-pro",
+      "is_giftcard": false,
+      "discountable": true,
+      "thumbnail": null,
+      "collection_id": null,
+      "type_id": null,
+      "weight": "60",
+      "length": null,
+      "height": null,
+      "width": null,
+      "hs_code": null,
+      "origin_country": null,
+      "mid_code": null,
+      "material": null,
+      "created_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-05-13T18:12:52.225Z",
+      "type": null,
+      "collection": null,
+      "options": [
+        {
+          "id": "opt_01KRH8N9BYSZD62TR7YFKGJ820",
+          "title": "Couleur",
+          "metadata": null,
+          "product_id": "prod_01KRH8N9BRSHG7EF4BDAP69QDP",
+          "created_at": "2026-05-13T18:12:52.226Z",
+          "updated_at": "2026-05-13T18:12:52.226Z",
+          "deleted_at": null,
+          "values": [
+            {
+              "id": "optval_01KRH8N9BYPCRQS4DPE9PKSTM5",
+              "value": "Noir",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BYSZD62TR7YFKGJ820",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BYD0VYQ1BRRHXTEA20",
+              "value": "Blanc",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BYSZD62TR7YFKGJ820",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BYGTD70GXYGXSKHD5W",
+              "value": "Bleu Nuit",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BYSZD62TR7YFKGJ820",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ],
+      "tags": [],
+      "images": [],
+      "variants": [
+        {
+          "id": "variant_01KRH8N9E57MC5XHJ8HB79C3HY",
+          "title": "Blanc",
+          "sku": "ZBUDS-WHT",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRSHG7EF4BDAP69QDP",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BYD0VYQ1BRRHXTEA20",
+              "value": "Blanc",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BYSZD62TR7YFKGJ820",
+              "option": {
+                "id": "opt_01KRH8N9BYSZD62TR7YFKGJ820",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRSHG7EF4BDAP69QDP",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E5CEQN2SDNPCWBNV69",
+          "title": "Bleu Nuit",
+          "sku": "ZBUDS-BLU",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRSHG7EF4BDAP69QDP",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BYGTD70GXYGXSKHD5W",
+              "value": "Bleu Nuit",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BYSZD62TR7YFKGJ820",
+              "option": {
+                "id": "opt_01KRH8N9BYSZD62TR7YFKGJ820",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRSHG7EF4BDAP69QDP",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E5YH9G71K05JV9690J",
+          "title": "Noir",
+          "sku": "ZBUDS-BLK",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRSHG7EF4BDAP69QDP",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BYPCRQS4DPE9PKSTM5",
+              "value": "Noir",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BYSZD62TR7YFKGJ820",
+              "option": {
+                "id": "opt_01KRH8N9BYSZD62TR7YFKGJ820",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRSHG7EF4BDAP69QDP",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_01KRH8N9BRWVR4P21VWG4G1R08",
+      "title": "ZotoSpeaker Boom",
+      "subtitle": null,
+      "description": "Enceinte bluetooth portable. Son 360 degres, etanche IP67, autonomie 12h. Parfaite pour l'exterieur.",
+      "handle": "zotospeaker-boom",
+      "is_giftcard": false,
+      "discountable": true,
+      "thumbnail": null,
+      "collection_id": null,
+      "type_id": null,
+      "weight": "550",
+      "length": null,
+      "height": null,
+      "width": null,
+      "hs_code": null,
+      "origin_country": null,
+      "mid_code": null,
+      "material": null,
+      "created_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-05-13T18:12:52.225Z",
+      "type": null,
+      "collection": null,
+      "options": [
+        {
+          "id": "opt_01KRH8N9BY1BH9WM2GDDKKXNAW",
+          "title": "Couleur",
+          "metadata": null,
+          "product_id": "prod_01KRH8N9BRWVR4P21VWG4G1R08",
+          "created_at": "2026-05-13T18:12:52.226Z",
+          "updated_at": "2026-05-13T18:12:52.226Z",
+          "deleted_at": null,
+          "values": [
+            {
+              "id": "optval_01KRH8N9BY9VRTYSY4E5VZY4WV",
+              "value": "Gris",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BY1BH9WM2GDDKKXNAW",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BYY4F8HGJGCSA6VQ9B",
+              "value": "Orange",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BY1BH9WM2GDDKKXNAW",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BY7DED6PKST2JW8CS8",
+              "value": "Vert Foret",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BY1BH9WM2GDDKKXNAW",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ],
+      "tags": [],
+      "images": [],
+      "variants": [
+        {
+          "id": "variant_01KRH8N9E52N97DDA3NVA4K4FC",
+          "title": "Orange",
+          "sku": "ZSPEAK-ORG",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRWVR4P21VWG4G1R08",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BYY4F8HGJGCSA6VQ9B",
+              "value": "Orange",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BY1BH9WM2GDDKKXNAW",
+              "option": {
+                "id": "opt_01KRH8N9BY1BH9WM2GDDKKXNAW",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRWVR4P21VWG4G1R08",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E53AA46PN805EQ3F1D",
+          "title": "Gris",
+          "sku": "ZSPEAK-GRY",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRWVR4P21VWG4G1R08",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BY9VRTYSY4E5VZY4WV",
+              "value": "Gris",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BY1BH9WM2GDDKKXNAW",
+              "option": {
+                "id": "opt_01KRH8N9BY1BH9WM2GDDKKXNAW",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRWVR4P21VWG4G1R08",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E5KCXA8PXZ6Y2PCQYZ",
+          "title": "Vert Foret",
+          "sku": "ZSPEAK-GRN",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRWVR4P21VWG4G1R08",
+          "created_at": "2026-05-13T18:12:52.296Z",
+          "updated_at": "2026-05-13T18:12:52.296Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BY7DED6PKST2JW8CS8",
+              "value": "Vert Foret",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BY1BH9WM2GDDKKXNAW",
+              "option": {
+                "id": "opt_01KRH8N9BY1BH9WM2GDDKKXNAW",
+                "title": "Couleur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRWVR4P21VWG4G1R08",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prod_01KRH8N9BRXVCXM9BSZP8Q6H69",
+      "title": "Cable USB-C ZotoLink",
+      "subtitle": null,
+      "description": "Cable USB-C tresse haute qualite. Charge rapide 100W, transfert donnees 10Gbps.",
+      "handle": "cable-zotolink",
+      "is_giftcard": false,
+      "discountable": true,
+      "thumbnail": null,
+      "collection_id": null,
+      "type_id": null,
+      "weight": "40",
+      "length": null,
+      "height": null,
+      "width": null,
+      "hs_code": null,
+      "origin_country": null,
+      "mid_code": null,
+      "material": null,
+      "created_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-05-13T18:12:52.225Z",
+      "type": null,
+      "collection": null,
+      "options": [
+        {
+          "id": "opt_01KRH8N9BXFMQT0TV5VYKV4BTH",
+          "title": "Longueur",
+          "metadata": null,
+          "product_id": "prod_01KRH8N9BRXVCXM9BSZP8Q6H69",
+          "created_at": "2026-05-13T18:12:52.226Z",
+          "updated_at": "2026-05-13T18:12:52.226Z",
+          "deleted_at": null,
+          "values": [
+            {
+              "id": "optval_01KRH8N9BXW4X49CG5AS7CZ2B1",
+              "value": "1m",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BXFMQT0TV5VYKV4BTH",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BXYYYBXGP6WNJ1RKEP",
+              "value": "2m",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BXFMQT0TV5VYKV4BTH",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            },
+            {
+              "id": "optval_01KRH8N9BX8J9KJ4GDSSNNHFXV",
+              "value": "3m",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BXFMQT0TV5VYKV4BTH",
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ],
+      "tags": [],
+      "images": [],
+      "variants": [
+        {
+          "id": "variant_01KRH8N9E4JJXY94HDXGBJZZ9T",
+          "title": "2m",
+          "sku": "ZCABLE-2M",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRXVCXM9BSZP8Q6H69",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BXYYYBXGP6WNJ1RKEP",
+              "value": "2m",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BXFMQT0TV5VYKV4BTH",
+              "option": {
+                "id": "opt_01KRH8N9BXFMQT0TV5VYKV4BTH",
+                "title": "Longueur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRXVCXM9BSZP8Q6H69",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E4ZYMT9XCT7M6HBVK8",
+          "title": "1m",
+          "sku": "ZCABLE-1M",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRXVCXM9BSZP8Q6H69",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BXW4X49CG5AS7CZ2B1",
+              "value": "1m",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BXFMQT0TV5VYKV4BTH",
+              "option": {
+                "id": "opt_01KRH8N9BXFMQT0TV5VYKV4BTH",
+                "title": "Longueur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRXVCXM9BSZP8Q6H69",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        },
+        {
+          "id": "variant_01KRH8N9E5ERV1GHFS1W9CMJP4",
+          "title": "3m",
+          "sku": "ZCABLE-3M",
+          "barcode": null,
+          "ean": null,
+          "upc": null,
+          "allow_backorder": false,
+          "manage_inventory": true,
+          "hs_code": null,
+          "origin_country": null,
+          "mid_code": null,
+          "material": null,
+          "weight": null,
+          "length": null,
+          "height": null,
+          "width": null,
+          "metadata": null,
+          "variant_rank": 0,
+          "thumbnail": null,
+          "product_id": "prod_01KRH8N9BRXVCXM9BSZP8Q6H69",
+          "created_at": "2026-05-13T18:12:52.295Z",
+          "updated_at": "2026-05-13T18:12:52.295Z",
+          "deleted_at": null,
+          "options": [
+            {
+              "id": "optval_01KRH8N9BX8J9KJ4GDSSNNHFXV",
+              "value": "3m",
+              "metadata": null,
+              "option_id": "opt_01KRH8N9BXFMQT0TV5VYKV4BTH",
+              "option": {
+                "id": "opt_01KRH8N9BXFMQT0TV5VYKV4BTH",
+                "title": "Longueur",
+                "metadata": null,
+                "product_id": "prod_01KRH8N9BRXVCXM9BSZP8Q6H69",
+                "created_at": "2026-05-13T18:12:52.226Z",
+                "updated_at": "2026-05-13T18:12:52.226Z",
+                "deleted_at": null
+              },
+              "created_at": "2026-05-13T18:12:52.226Z",
+              "updated_at": "2026-05-13T18:12:52.226Z",
+              "deleted_at": null
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "count": 12,
+  "offset": 0,
+  "limit": 12
+}
