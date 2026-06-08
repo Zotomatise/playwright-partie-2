@@ -1,0 +1,1 @@
+[@regression @smoke le premier produit a un prix positif] durée: 14313 ms
