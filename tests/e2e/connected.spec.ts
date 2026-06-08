@@ -26,9 +26,9 @@ test.describe("Tests de connexion", () => {
     page,
   }) => {
     await page.goto("/fr");
-    await page.getByRole("link", { name: "Découvrir nos articles" }).click();
+    await page.getByRole("link", { name: "Découvrir les articles" }).click();
     await expect(
-      page.getByRole("heading", { name: "Tous les articles" }),
+      page.getByRole("heading", { name: "Tous les articles de la boutique" }),
     ).toBeVisible();
   });
   test("deja connecté et le bouton de connexion n'est pas visible", async ({
