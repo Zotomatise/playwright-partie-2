@@ -8,7 +8,9 @@ test.describe("Tests de connexion", () => {
     await page.getByTestId("nav-account-link").click();
     // Le bouton "Déconnexion" n'apparaît que sur un compte connecté : c'est la
     // preuve que le storageState du global setup nous a bien authentifiés.
-    await expect(page.getByRole("button", { name: "Déconnexion" })).toBeVisible();
+    await expect(
+      page.getByRole("button", { name: "Déconnexion" }),
+    ).toBeVisible();
   });
   test("@smoke déjà connecté à zotoshop et panier accessible", async ({
     page,
@@ -24,9 +26,9 @@ test.describe("Tests de connexion", () => {
     page,
   }) => {
     await page.goto("/fr");
-    await page.getByRole("link", { name: "Découvrir nos produits" }).click();
+    await page.getByRole("link", { name: "Découvrir nos articles" }).click();
     await expect(
-      page.getByRole("heading", { name: "Tous les produits" }),
+      page.getByRole("heading", { name: "Tous les articles" }),
     ).toBeVisible();
   });
   test("deja connecté et le bouton de connexion n'est pas visible", async ({
