@@ -1,1 +1,1 @@
-{"total":2,"items":[{"uid":"242ff88dce9b7ed58ca1c3292f04efc1","name":"smoke-api","statistic":{"failed":0,"broken":2,"skipped":0,"passed":6,"unknown":0,"total":8}},{"uid":"3cb3c6c37f6b2d69fcfb2a50e0c467a0","name":"smoke-chrome","statistic":{"failed":0,"broken":1,"skipped":0,"passed":2,"unknown":0,"total":3}}]}
+{"total":1,"items":[{"uid":"242ff88dce9b7ed58ca1c3292f04efc1","name":"smoke-api","statistic":{"failed":0,"broken":0,"skipped":0,"passed":8,"unknown":0,"total":8}}]}
