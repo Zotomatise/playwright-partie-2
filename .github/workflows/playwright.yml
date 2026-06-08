@@ -32,14 +32,17 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run smoke API tests
+        id: playwright-api-tests
         env:
           ZOTOSHOP_API_URL: https://api.zotomatise.com
           ZOTOSHOP_PUBLISHABLE_KEY: pk_0ab41d879415264941a92a80aceb00b1b03b93128c7bfaa08f06ae56eda41233
         run: npx playwright test --project=smoke-api --shard=${{ matrix.shard }}/4
+        continue-on-error: true
 
       # SMOKE CHROME (E2E UI) — login UI via global-setup
       # Les credentials de test viennent des GitHub Secrets (M9.L3).
       - name: Run smoke E2E tests (Chrome)
+        id: playwright-tests
         env:
           STOREFRONT_URL: ${{ secrets.STOREFRONT_URL }}
           ZOTOSHOP_API_URL: https://api.zotomatise.com
@@ -47,6 +50,7 @@ jobs:
           ZOTOSHOP_TEST_EMAIL: ${{ secrets.ZOTOSHOP_TEST_EMAIL }}
           ZOTOSHOP_TEST_PASSWORD: ${{ secrets.ZOTOSHOP_TEST_PASSWORD }}
         run: npx playwright test --project=smoke-chrome --shard=${{ matrix.shard }}/4
+        continue-on-error: true
 
       - uses: actions/upload-artifact@v4
         if: always()
@@ -62,6 +66,17 @@ jobs:
           name: allure-results-${{ matrix.shard }}
           path: allure-results/
           retention-days: 7
+
+      # ✅ Vérifier si des tests ont échoué et faire échouer le job explicitement
+      - name: Check for test failures
+        if: always()
+        run: |
+          if [[ "${{ steps.playwright-api-tests.outcome }}" == "failure" ]] || [[ "${{ steps.playwright-tests.outcome }}" == "failure" ]]; then
+            echo "❌ Tests failed - marking job as failed"
+            exit 1
+          else
+            echo "✅ All tests passed"
+          fi
 
   # MERGE-REPORTS — fusionne les blobs (HTML) + génère Allure + pousse les 2 dashboards
   # en UN SEUL commit gh-pages (évite les pages-build cancelled = point d'exclamation jaune)
