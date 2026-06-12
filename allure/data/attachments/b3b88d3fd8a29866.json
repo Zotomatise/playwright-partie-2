@@ -8,7 +8,7 @@
       "handle": "zotobook-pro-16",
       "is_giftcard": false,
       "discountable": true,
-      "thumbnail": null,
+      "thumbnail": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80",
       "collection_id": null,
       "type_id": null,
       "weight": "2100",
@@ -20,7 +20,7 @@
       "mid_code": null,
       "material": null,
       "created_at": "2026-05-13T18:12:52.225Z",
-      "updated_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-06-11T22:09:44.849Z",
       "type": null,
       "collection": null,
       "options": [
@@ -55,7 +55,18 @@
         }
       ],
       "tags": [],
-      "images": [],
+      "images": [
+        {
+          "id": "img_05f85ef8be104fbf8c415f9122d38da0",
+          "url": "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80",
+          "metadata": null,
+          "rank": 0,
+          "product_id": "prod_01KRH8N9BR1RBV2MPXTPYSHEMR",
+          "created_at": "2026-06-11T22:09:44.849Z",
+          "updated_at": "2026-06-11T22:09:44.849Z",
+          "deleted_at": null
+        }
+      ],
       "variants": [
         {
           "id": "variant_01KRH8N9E46GQ7F0RB5KRX681P",
@@ -157,7 +168,7 @@
       "handle": "zotophone-pro-15",
       "is_giftcard": false,
       "discountable": true,
-      "thumbnail": null,
+      "thumbnail": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80",
       "collection_id": null,
       "type_id": null,
       "weight": "200",
@@ -169,7 +180,7 @@
       "mid_code": null,
       "material": null,
       "created_at": "2026-05-13T18:12:52.224Z",
-      "updated_at": "2026-05-13T18:12:52.224Z",
+      "updated_at": "2026-06-11T22:09:44.849Z",
       "type": null,
       "collection": null,
       "options": [
@@ -251,7 +262,18 @@
         }
       ],
       "tags": [],
-      "images": [],
+      "images": [
+        {
+          "id": "img_8cd032b0a3e041c09427cb6fc290e280",
+          "url": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=80",
+          "metadata": null,
+          "rank": 0,
+          "product_id": "prod_01KRH8N9BR6R8T3H7SVZH4G797",
+          "created_at": "2026-06-11T22:09:44.849Z",
+          "updated_at": "2026-06-11T22:09:44.849Z",
+          "deleted_at": null
+        }
+      ],
       "variants": [
         {
           "id": "variant_01KRH8N9E2CXGRSG9R9YHWWXBT",
@@ -515,7 +537,7 @@
       "handle": "zotocharge-65w",
       "is_giftcard": false,
       "discountable": true,
-      "thumbnail": null,
+      "thumbnail": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=600&q=80",
       "collection_id": null,
       "type_id": null,
       "weight": "120",
@@ -527,7 +549,7 @@
       "mid_code": null,
       "material": null,
       "created_at": "2026-05-13T18:12:52.225Z",
-      "updated_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-06-11T22:09:44.849Z",
       "type": null,
       "collection": null,
       "options": [
@@ -562,7 +584,18 @@
         }
       ],
       "tags": [],
-      "images": [],
+      "images": [
+        {
+          "id": "img_c1d5d3e35bb24d44ac4b5d28f3ec2d08",
+          "url": "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=600&q=80",
+          "metadata": null,
+          "rank": 0,
+          "product_id": "prod_01KRH8N9BR6WEVY4M55HQ91YH7",
+          "created_at": "2026-06-11T22:09:44.849Z",
+          "updated_at": "2026-06-11T22:09:44.849Z",
+          "deleted_at": null
+        }
+      ],
       "variants": [
         {
           "id": "variant_01KRH8N9E45P5X5CH0886ANGNR",
@@ -664,7 +697,7 @@
       "handle": "zotopad-controller",
       "is_giftcard": false,
       "discountable": true,
-      "thumbnail": null,
+      "thumbnail": "https://images.unsplash.com/photo-1592840496694-26d035b52b48?auto=format&fit=crop&w=600&q=80",
       "collection_id": null,
       "type_id": null,
       "weight": "280",
@@ -676,7 +709,7 @@
       "mid_code": null,
       "material": null,
       "created_at": "2026-05-13T18:12:52.225Z",
-      "updated_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-06-11T22:09:44.849Z",
       "type": null,
       "collection": null,
       "options": [
@@ -720,7 +753,18 @@
         }
       ],
       "tags": [],
-      "images": [],
+      "images": [
+        {
+          "id": "img_cab24403a1e64f64923431580ec9ff3d",
+          "url": "https://images.unsplash.com/photo-1592840496694-26d035b52b48?auto=format&fit=crop&w=600&q=80",
+          "metadata": null,
+          "rank": 0,
+          "product_id": "prod_01KRH8N9BR8Y99MNCE4QHA3B0F",
+          "created_at": "2026-06-11T22:09:44.849Z",
+          "updated_at": "2026-06-11T22:09:44.849Z",
+          "deleted_at": null
+        }
+      ],
       "variants": [
         {
           "id": "variant_01KRH8N9E5S7JQ5G81VPCTZF47",
@@ -867,7 +911,7 @@
       "handle": "zotophone-lite",
       "is_giftcard": false,
       "discountable": true,
-      "thumbnail": null,
+      "thumbnail": "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=600&q=80",
       "collection_id": null,
       "type_id": null,
       "weight": "180",
@@ -879,7 +923,7 @@
       "mid_code": null,
       "material": null,
       "created_at": "2026-05-13T18:12:52.225Z",
-      "updated_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-06-11T22:09:44.849Z",
       "type": null,
       "collection": null,
       "options": [
@@ -952,7 +996,18 @@
         }
       ],
       "tags": [],
-      "images": [],
+      "images": [
+        {
+          "id": "img_3b74aa56cf7b436fbb5e00edf8a5aa5f",
+          "url": "https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=600&q=80",
+          "metadata": null,
+          "rank": 0,
+          "product_id": "prod_01KRH8N9BRC2ZZRYSRWSTMDGEQ",
+          "created_at": "2026-06-11T22:09:44.849Z",
+          "updated_at": "2026-06-11T22:09:44.849Z",
+          "deleted_at": null
+        }
+      ],
       "variants": [
         {
           "id": "variant_01KRH8N9E38A3QD16S11DFKC3J",
@@ -1153,7 +1208,7 @@
       "handle": "zotocoque",
       "is_giftcard": false,
       "discountable": true,
-      "thumbnail": null,
+      "thumbnail": "https://images.unsplash.com/photo-1601593346740-925612772716?auto=format&fit=crop&w=600&q=80",
       "collection_id": null,
       "type_id": null,
       "weight": "50",
@@ -1165,7 +1220,7 @@
       "mid_code": null,
       "material": null,
       "created_at": "2026-05-13T18:12:52.225Z",
-      "updated_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-06-11T22:09:44.849Z",
       "type": null,
       "collection": null,
       "options": [
@@ -1238,7 +1293,18 @@
         }
       ],
       "tags": [],
-      "images": [],
+      "images": [
+        {
+          "id": "img_21990496ff354105959db809df4f7a02",
+          "url": "https://images.unsplash.com/photo-1601593346740-925612772716?auto=format&fit=crop&w=600&q=80",
+          "metadata": null,
+          "rank": 0,
+          "product_id": "prod_01KRH8N9BRCS8TDT7ZARNFK465",
+          "created_at": "2026-06-11T22:09:44.849Z",
+          "updated_at": "2026-06-11T22:09:44.849Z",
+          "deleted_at": null
+        }
+      ],
       "variants": [
         {
           "id": "variant_01KRH8N9E43G27DH2T157DAZ9H",
@@ -1502,7 +1568,7 @@
       "handle": "zotobook-air-14",
       "is_giftcard": false,
       "discountable": true,
-      "thumbnail": null,
+      "thumbnail": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80",
       "collection_id": null,
       "type_id": null,
       "weight": "1300",
@@ -1514,7 +1580,7 @@
       "mid_code": null,
       "material": null,
       "created_at": "2026-05-13T18:12:52.225Z",
-      "updated_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-06-11T22:09:44.849Z",
       "type": null,
       "collection": null,
       "options": [
@@ -1558,7 +1624,18 @@
         }
       ],
       "tags": [],
-      "images": [],
+      "images": [
+        {
+          "id": "img_392a6975d6d0420e8ead011b42804de9",
+          "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=600&q=80",
+          "metadata": null,
+          "rank": 0,
+          "product_id": "prod_01KRH8N9BRKJWH54QDXE3RSJ0D",
+          "created_at": "2026-06-11T22:09:44.849Z",
+          "updated_at": "2026-06-11T22:09:44.849Z",
+          "deleted_at": null
+        }
+      ],
       "variants": [
         {
           "id": "variant_01KRH8N9E32QPADR0W5V9X2Z5Y",
@@ -1705,7 +1782,7 @@
       "handle": "zotomouse-precision",
       "is_giftcard": false,
       "discountable": true,
-      "thumbnail": null,
+      "thumbnail": "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=600&q=80",
       "collection_id": null,
       "type_id": null,
       "weight": "58",
@@ -1717,7 +1794,7 @@
       "mid_code": null,
       "material": null,
       "created_at": "2026-05-13T18:12:52.225Z",
-      "updated_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-06-11T22:09:44.849Z",
       "type": null,
       "collection": null,
       "options": [
@@ -1752,7 +1829,18 @@
         }
       ],
       "tags": [],
-      "images": [],
+      "images": [
+        {
+          "id": "img_c90057ff9f1a403989592eafeb8bca39",
+          "url": "https://images.unsplash.com/photo-1527814050087-3793815479db?auto=format&fit=crop&w=600&q=80",
+          "metadata": null,
+          "rank": 0,
+          "product_id": "prod_01KRH8N9BRPSZ9A11KT42Z2ZGY",
+          "created_at": "2026-06-11T22:09:44.849Z",
+          "updated_at": "2026-06-11T22:09:44.849Z",
+          "deleted_at": null
+        }
+      ],
       "variants": [
         {
           "id": "variant_01KRH8N9E6EK29Y869JQFCW395",
@@ -1854,7 +1942,7 @@
       "handle": "zotoscreen-27",
       "is_giftcard": false,
       "discountable": true,
-      "thumbnail": null,
+      "thumbnail": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=600&q=80",
       "collection_id": null,
       "type_id": null,
       "weight": "5500",
@@ -1866,7 +1954,7 @@
       "mid_code": null,
       "material": null,
       "created_at": "2026-05-13T18:12:52.225Z",
-      "updated_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-06-11T22:09:44.849Z",
       "type": null,
       "collection": null,
       "options": [
@@ -1901,7 +1989,18 @@
         }
       ],
       "tags": [],
-      "images": [],
+      "images": [
+        {
+          "id": "img_a260f9231dfc41c5bf28ae07f00c031b",
+          "url": "https://images.unsplash.com/photo-1527443224154-c4a3942d3acf?auto=format&fit=crop&w=600&q=80",
+          "metadata": null,
+          "rank": 0,
+          "product_id": "prod_01KRH8N9BRRW95YV6KZHW6607E",
+          "created_at": "2026-06-11T22:09:44.849Z",
+          "updated_at": "2026-06-11T22:09:44.849Z",
+          "deleted_at": null
+        }
+      ],
       "variants": [
         {
           "id": "variant_01KRH8N9E6088669JRR0GSR934",
@@ -2003,7 +2102,7 @@
       "handle": "zotobuds-pro",
       "is_giftcard": false,
       "discountable": true,
-      "thumbnail": null,
+      "thumbnail": "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?auto=format&fit=crop&w=600&q=80",
       "collection_id": null,
       "type_id": null,
       "weight": "60",
@@ -2015,7 +2114,7 @@
       "mid_code": null,
       "material": null,
       "created_at": "2026-05-13T18:12:52.225Z",
-      "updated_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-06-11T22:09:44.849Z",
       "type": null,
       "collection": null,
       "options": [
@@ -2059,7 +2158,18 @@
         }
       ],
       "tags": [],
-      "images": [],
+      "images": [
+        {
+          "id": "img_29e04e40085a47c392178e43d135e870",
+          "url": "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb?auto=format&fit=crop&w=600&q=80",
+          "metadata": null,
+          "rank": 0,
+          "product_id": "prod_01KRH8N9BRSHG7EF4BDAP69QDP",
+          "created_at": "2026-06-11T22:09:44.849Z",
+          "updated_at": "2026-06-11T22:09:44.849Z",
+          "deleted_at": null
+        }
+      ],
       "variants": [
         {
           "id": "variant_01KRH8N9E57MC5XHJ8HB79C3HY",
@@ -2206,7 +2316,7 @@
       "handle": "zotospeaker-boom",
       "is_giftcard": false,
       "discountable": true,
-      "thumbnail": null,
+      "thumbnail": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=600&q=80",
       "collection_id": null,
       "type_id": null,
       "weight": "550",
@@ -2218,7 +2328,7 @@
       "mid_code": null,
       "material": null,
       "created_at": "2026-05-13T18:12:52.225Z",
-      "updated_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-06-11T22:09:44.849Z",
       "type": null,
       "collection": null,
       "options": [
@@ -2262,7 +2372,18 @@
         }
       ],
       "tags": [],
-      "images": [],
+      "images": [
+        {
+          "id": "img_4b5383b1a40e4840a69ffd7c85dbfcee",
+          "url": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=600&q=80",
+          "metadata": null,
+          "rank": 0,
+          "product_id": "prod_01KRH8N9BRWVR4P21VWG4G1R08",
+          "created_at": "2026-06-11T22:09:44.849Z",
+          "updated_at": "2026-06-11T22:09:44.849Z",
+          "deleted_at": null
+        }
+      ],
       "variants": [
         {
           "id": "variant_01KRH8N9E52N97DDA3NVA4K4FC",
@@ -2409,7 +2530,7 @@
       "handle": "cable-zotolink",
       "is_giftcard": false,
       "discountable": true,
-      "thumbnail": null,
+      "thumbnail": "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=600&q=80",
       "collection_id": null,
       "type_id": null,
       "weight": "40",
@@ -2421,7 +2542,7 @@
       "mid_code": null,
       "material": null,
       "created_at": "2026-05-13T18:12:52.225Z",
-      "updated_at": "2026-05-13T18:12:52.225Z",
+      "updated_at": "2026-06-11T22:09:44.849Z",
       "type": null,
       "collection": null,
       "options": [
@@ -2465,7 +2586,18 @@
         }
       ],
       "tags": [],
-      "images": [],
+      "images": [
+        {
+          "id": "img_98251d0cf53e4b30aadd3a2c975eadc4",
+          "url": "https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=600&q=80",
+          "metadata": null,
+          "rank": 0,
+          "product_id": "prod_01KRH8N9BRXVCXM9BSZP8Q6H69",
+          "created_at": "2026-06-11T22:09:44.849Z",
+          "updated_at": "2026-06-11T22:09:44.849Z",
+          "deleted_at": null
+        }
+      ],
       "variants": [
         {
           "id": "variant_01KRH8N9E4JJXY94HDXGBJZZ9T",
