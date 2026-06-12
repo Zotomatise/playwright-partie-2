@@ -13,7 +13,7 @@ interface FailedTest {
 }
 
 class TeamNotifsReporter implements Reporter {
-  private failedTests: FailedTest[] = [];
+  private failedSmokeTests: FailedTest[] = [];
   private startTime: number = 0;
   private totalTests: number = 0;
   private passedTests: number = 0;
@@ -29,10 +29,10 @@ class TeamNotifsReporter implements Reporter {
       this.passedTests++;
     }
 
-    // Détecter tous les échecs (tous tags confondus)
-    if (result.status === "failed") {
+    // Détecter les échecs @smoke
+    if (result.status === "failed" && test.title.includes("@smoke")) {
       // Limiter à 8 échecs
-      if (this.failedTests.length < 8) {
+      if (this.failedSmokeTests.length < 8) {
         const rawError = result.error?.message || "Erreur inconnue";
 
         // Nettoyer les codes ANSI
@@ -44,7 +44,7 @@ class TeamNotifsReporter implements Reporter {
             ? cleanError.substring(0, 160) + "..."
             : cleanError;
 
-        this.failedTests.push({
+        this.failedSmokeTests.push({
           title: test.title,
           error: truncatedError,
         });
@@ -53,7 +53,7 @@ class TeamNotifsReporter implements Reporter {
   }
 
   async onEnd(result: FullResult) {
-    const failedCount = this.failedTests.length;
+    const failedCount = this.failedSmokeTests.length;
 
     // Silencieux si aucun échec
     if (failedCount === 0) {
@@ -110,11 +110,11 @@ class TeamNotifsReporter implements Reporter {
     githubRepo?: string,
     githubRunId?: string,
   ) {
-    const hasMore = this.failedTests.length === 8;
+    const hasMore = this.failedSmokeTests.length === 8;
     const subtitle = `${this.passedTests} passés / ${this.totalTests} total`;
 
     // Construire la section des échecs
-    const failureDetails = this.failedTests
+    const failureDetails = this.failedSmokeTests
       .map((test) => {
         return `**${test.title}**\n\n\`\`\`\n${test.error}\n\`\`\``;
       })
@@ -124,10 +124,10 @@ class TeamNotifsReporter implements Reporter {
       "@type": "MessageCard",
       "@context": "https://schema.org/extensions",
       themeColor: "D00000",
-      summary: `${failedCount} test(s) en échec`,
+      summary: `${failedCount} test(s) @smoke en échec`,
       sections: [
         {
-          activityTitle: `🚨 ${failedCount} test(s) en échec sur ZotoShop`,
+          activityTitle: `🚨 ${failedCount} test(s) @smoke en échec sur ZotoShop`,
           activitySubtitle: subtitle,
           facts: [
             {
@@ -202,17 +202,17 @@ class TeamNotifsReporter implements Reporter {
     githubRepo?: string,
     githubRunId?: string,
   ) {
-    const hasMore = this.failedTests.length === 8;
+    const hasMore = this.failedSmokeTests.length === 8;
 
     // Construire le message simple
-    let message = `🚨 ${failedCount} test(s) en échec sur ZotoShop\n`;
+    let message = `🚨 ${failedCount} test(s) @smoke en échec sur ZotoShop\n`;
     message += `${this.passedTests} passés / ${this.totalTests} total\n\n`;
     message += `Environnement: ${env}\n`;
     message += `Branche: ${branch}\n`;
     message += `Durée: ${duration}s\n\n`;
     message += `Échecs${hasMore ? " (max 8 listés)" : ""}:\n`;
 
-    this.failedTests.forEach((test, index) => {
+    this.failedSmokeTests.forEach((test, index) => {
       message += `\n${index + 1}. ${test.title}\n`;
       message += `   ${test.error}\n`;
     });
