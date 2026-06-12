@@ -1,0 +1,16 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: api/product.spec.ts >> @smoke API content-type JSON
+- Location: tests/api/product.spec.ts:62:1
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
