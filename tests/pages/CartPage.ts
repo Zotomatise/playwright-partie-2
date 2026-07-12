@@ -67,4 +67,22 @@ export class CartPage extends BasePage {
   async expectCheckoutBoutonVisible(): Promise<void> {
     await expect(this.checkoutButton).toBeVisible();
   }
+
+  /**
+   * Vérifie que le compteur du panier dans la navigation affiche exactement N articles.
+   * Le lien nav affiche "Panier (N)" — visible depuis toutes les pages du site.
+   */
+  async expectCompteurNavigation(n: number): Promise<void> {
+    await expect(this.page.getByTestId("nav-cart-link")).toContainText(`Panier (${n})`);
+  }
+
+  /**
+   * Lit la valeur actuelle du compteur dans la navigation.
+   * Utile pour vérifier une incrémentation sans supposer que le panier est vide.
+   */
+  async lireCompteurNavigation(): Promise<number> {
+    const texte = (await this.page.getByTestId("nav-cart-link").textContent()) ?? "";
+    const match = texte.match(/\((\d+)\)/);
+    return match ? parseInt(match[1] ?? "0", 10) : 0;
+  }
 }

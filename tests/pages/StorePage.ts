@@ -33,6 +33,12 @@ export class StorePage extends BasePage {
     return this.ActualUrl().includes("/fr/store");
   }
 
+  // === Couche 2 (suite) : NAVIGATION ===
+  async allerVersFiche(slug: string): Promise<void> {
+    await this.page.goto(`/fr/products/${slug}`);
+    await this.attendPageToBeVisible();
+  }
+
   // === Couche 3 : ACTIONS (à venir) ===
   async clickOnFirstProduct(): Promise<void> {
     await this.productWrappers.first().click();
@@ -46,6 +52,12 @@ export class StorePage extends BasePage {
     }
     return parseFloat(priceText.replace("€", "").trim());
   }
+
+  async getProducts(): Promise<Locator[]> {
+    await this.productWrappers.first().waitFor({ state: "visible" });
+    return this.productWrappers.all();
+  }
+
   // === Couche 4 : ASSERTIONS (à venir) ===
   async expectOneProductIsVisible(): Promise<void> {
     await expect(this.productWrappers.first()).toBeVisible();
@@ -59,5 +71,19 @@ export class StorePage extends BasePage {
   async expectPositivePrice(): Promise<void> {
     const price = await this.getFirstProductPrice();
     expect(price).toBeGreaterThan(0);
+  }
+
+  async getAllProductTitles(): Promise<string[]> {
+    await this.productTitles.first().waitFor({ state: "visible" });
+    const titles = await this.productTitles.all();
+    return Promise.all(titles.map((t) => t.textContent().then((v) => v ?? "")));
+  }
+
+  async expectAllProductTitlesNonEmpty(): Promise<void> {
+    const titles = await this.getAllProductTitles();
+    expect(titles.length).toBeGreaterThan(0);
+    for (const title of titles) {
+      expect(title.trim(), `Titre vide détecté parmi les produits`).not.toBe("");
+    }
   }
 }

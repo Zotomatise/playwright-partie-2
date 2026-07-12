@@ -93,4 +93,9 @@ test.describe("@regression Store page - POM", () => {
     const response = await apiClient.get("/fr/store");
     expect(response.ok()).toBe(true);
   });
+
+  test("@smoke chaque produit a un titre non vide", async ({ storePage }) => {
+    await storePage.goto();
+    await storePage.expectAllProductTitlesNonEmpty();
+  });
 });

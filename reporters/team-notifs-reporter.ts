@@ -53,7 +53,7 @@ class TeamNotifsReporter implements Reporter {
   }
 
   async onEnd(result: FullResult) {
-  const failedCount = this.failedTests.length;
+    const failedCount = this.failedTests.length;
 
     // Silencieux si aucun échec
     if (failedCount === 0) {
@@ -202,10 +202,10 @@ class TeamNotifsReporter implements Reporter {
     githubRepo?: string,
     githubRunId?: string,
   ) {
-  const hasMore = this.failedTests.length === 8;
+    const hasMore = this.failedTests.length === 8;
 
     // Construire le message simple
-  let message = `🚨 ${failedCount} test(s) en échec sur ZotoShop\n`;
+    let message = `🚨 ${failedCount} test(s) en échec sur ZotoShop\n`;
     message += `${this.passedTests} passés / ${this.totalTests} total\n\n`;
     message += `Environnement: ${env}\n`;
     message += `Branche: ${branch}\n`;

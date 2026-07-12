@@ -18,6 +18,7 @@ export class ProductPage extends BasePage {
   private readonly price: Locator;
   private readonly addToCartButton: Locator;
   private readonly variantOptions: Locator;
+  private readonly stockIndicator: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -27,6 +28,7 @@ export class ProductPage extends BasePage {
     this.addToCartButton = page.getByTestId("add-product-button");
     // Boutons de sélection de variante (couleur, taille...)
     this.variantOptions = page.getByTestId("option-button");
+    this.stockIndicator = page.getByTestId("product-stock-indicator");
   }
 
   // === Couche 2 : NAVIGATION ===
@@ -88,5 +90,14 @@ export class ProductPage extends BasePage {
   async expectPrixPositif(): Promise<void> {
     const prix = await this.lirePrix();
     expect(prix).toBeGreaterThan(0);
+  }
+
+  /**
+   * Vérifie qu'un produit sans stock affiche "Rupture de stock" et que le bouton est désactivé.
+   * Doit être appelée APRÈS selectionnerPremiereVariante() — l'indicateur n'apparaît qu'une fois une variante choisie.
+   */
+  async expectRuptureDeStock(): Promise<void> {
+    await expect(this.stockIndicator).toContainText("Rupture de stock");
+    await expect(this.addToCartButton).toBeDisabled();
   }
 }
