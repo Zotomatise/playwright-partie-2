@@ -1,1 +1,0 @@
-[@smoke TC-04 — Chaque carte affiche un titre non vide] durée: 880 ms

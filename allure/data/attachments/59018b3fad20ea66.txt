@@ -1,0 +1,1 @@
+[@smoke TC-08 — Le premier prix est strictement positif] durée: 1664 ms

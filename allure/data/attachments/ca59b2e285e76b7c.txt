@@ -1,1 +1,0 @@
-[@smoke TC-01 — Chargement de la page boutique] durée: 4349 ms

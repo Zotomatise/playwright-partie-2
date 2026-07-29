@@ -1,1 +1,0 @@
-[@smoke TC-02 — Au moins un produit est affiché] durée: 4443 ms
