@@ -36,3 +36,6 @@ pnpm-lock.yaml
 # JetBrains
 .idea/
 .gstack/
+
+# fichier Claude Code personnel (machine locale)
+.claude/settings.local.json

@@ -16,15 +16,16 @@ export class CartPage extends BasePage {
   // === Couche 1 : LOCATORS PRIVÉS ===
   private readonly checkoutButton: Locator;
   private readonly emptyCartMessage: Locator;
+  private readonly cartItems: Locator;
 
   constructor(page: Page) {
     super(page);
     this.checkoutButton = page.getByRole("link", {
       name: /checkout|commander/i,
     });
-    // Quand le panier est VIDE, ce message est visible.
-    // Quand il a au moins 1 article, il disparaît.
     this.emptyCartMessage = page.getByTestId("empty-cart-message");
+    // Page panier = "product-row" ("cart-item" n'existe que dans le dropdown de la nav)
+    this.cartItems = page.getByTestId("product-row");
   }
 
   // === Couche 2 : NAVIGATION ===
@@ -46,12 +47,11 @@ export class CartPage extends BasePage {
 
   // === Couche 4 : ASSERTIONS ENCAPSULÉES ===
   /**
-   * Vérifie que le panier contient au moins un article.
-   * On vérifie que le message "panier vide" n'est PAS visible.
-   * (Le paramètre min est ignoré — on vérifie juste 'non vide'.)
+   * Vérifie que le panier contient exactement `min` articles.
+   * Assertion positive sur cart-item (data-testid) — plus robuste qu'une négation sur le message vide.
    */
-  async expectHasItems(_min: number = 1): Promise<void> {
-    await expect(this.emptyCartMessage).not.toBeVisible({ timeout: 10_000 });
+  async expectHasItems(min: number = 1): Promise<void> {
+    await expect(this.cartItems).toHaveCount(min, { timeout: 10_000 });
   }
 
   /**

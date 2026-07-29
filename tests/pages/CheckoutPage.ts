@@ -1,4 +1,4 @@
-import { Page, Locator } from "@playwright/test";
+import { Page, Locator, expect } from "@playwright/test";
 import { BasePage } from "./BasePage";
 
 /**
@@ -242,5 +242,16 @@ export class CheckoutPage extends BasePage {
     await this.validerCarteBancaire();
     await this.soumettreEtapePaiement();
     await this.passerCommande();
+  }
+
+  // === Couche 4 : ASSERTIONS ===
+
+  /**
+   * L'adresse de livraison a été acceptée : l'étape se replie et le bouton
+   * "modifier l'adresse" apparaît. Sert à prouver qu'un cas tordu (apostrophe,
+   * accents, nom très long) passe le formulaire sans le casser.
+   */
+  async expectAdresseAcceptee(): Promise<void> {
+    await expect(this.boutonModifierAdresse).toBeVisible();
   }
 }

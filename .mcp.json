@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "playwright-test": {
+      "command": "npx",
+      "args": [
+        "playwright",
+        "run-test-mcp-server"
+      ]
+    },
+    "zototest": {
+      "command": "node",
+      "args": [
+        "/Users/fodecisse/Documents/Workspaces/dev/zototest/zototest-saas/07-zototest-mcp/dist/index.js"
+      ]
+    }
+  }
+}
