@@ -22,7 +22,9 @@ export class ProductPage extends BasePage {
 
   constructor(page: Page) {
     super(page);
-    this.title = page.locator("h1").first();
+    // Le titre de la fiche produit est un h2 (le h1 est réservé à la page boutique).
+    // Locator sémantique par rôle, jamais de sélecteur CSS positionnel (cf. conventions).
+    this.title = page.getByRole("heading", { level: 2 }).first();
     this.price = page.getByTestId("product-price").first();
     // Sélecteur stable Medusa : data-testid="add-product-button"
     this.addToCartButton = page.getByTestId("add-product-button");
