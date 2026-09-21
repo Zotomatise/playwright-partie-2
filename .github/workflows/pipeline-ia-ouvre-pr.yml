@@ -1,0 +1,87 @@
+name: Pipeline IA — ouvre une PR depuis une US
+
+# Déclenchement manuel (workflow_dispatch) pour la démo M4-L4.
+# En usage réel : peut aussi tourner sur un schedule (ex. chaque matin sur les US "à tester" du sprint).
+#
+# Où vivent les fichiers Python ? Le job lance `python ci_ouvrir_pr.py` à la RACINE du checkout :
+# ci_ouvrir_pr.py, pipeline.py, outils_ia.py, outils_jira.py, outils_fichiers.py, outils_test.py
+# doivent être committés dans le repo Playwright (à la racine, ou dans un dossier `ci/` en ajoutant
+# `working-directory: ci` à l'étape et PROJET_PLAYWRIGHT=${{ github.workspace }} reste la racine).
+#
+# ⚠️ Token : une PR ouverte avec le GITHUB_TOKEN par défaut NE DÉCLENCHE PAS les autres workflows
+# (règle GitHub anti-boucle). Le job 1 (playwright.yml, on: pull_request) ne tournerait donc jamais
+# sur la PR ouverte ici. Pour que la chaîne complète marche (L4 → L5 → capstone L6), le push et le
+# `gh pr create` doivent utiliser un secret PIPELINE_IA_TOKEN : un PAT fine-grained (contents +
+# pull-requests : write sur ce repo) ou un token de GitHub App. Voir l'étape « Lancer la chaîne ».
+on:
+  workflow_dispatch:
+    inputs:
+      cle_us:
+        description: "Clé de la user story Jira (ex ZSHOP-1)"
+        required: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generer-et-ouvrir-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Installer les dépendances Python de l'atelier
+        run: pip install "anthropic==0.111.0" requests python-dotenv   # version figée : le SDK 1.x n'accepte plus temperature
+
+      # L'étape « executer » du pipeline (pipeline.py) fait TOURNER le test généré avant de le
+      # versionner : il faut donc Node + Playwright + Chromium, comme dans playwright.yml.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Installer les dépendances Node du projet
+        run: npm ci
+
+      - name: Installer Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Config Git (le pipeline commite en son nom)
+        run: |
+          git config user.name "pipeline-ia-m4"
+          git config user.email "pipeline-ia@zotomatise.local"
+
+      # Secrets/clé API en CI : jamais en dur dans le code, jamais dans un .env commité.
+      - name: Lancer la chaîne L2 et ouvrir la PR si tout est vert
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          JIRA_URL: ${{ secrets.JIRA_URL }}
+          JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
+          JIRA_TOKEN: ${{ secrets.JIRA_TOKEN }}
+          # PIPELINE_IA_TOKEN (PAT / GitHub App) et non GITHUB_TOKEN : sinon la PR ouverte ne
+          # déclenche pas playwright.yml (voir l'en-tête de ce fichier).
+          GH_TOKEN: ${{ secrets.PIPELINE_IA_TOKEN }}
+          PROJET_PLAYWRIGHT: ${{ github.workspace }}
+          PLAYWRIGHT_PROJET: chromium
+          # Ce que le test généré a besoin pour tourner (mêmes secrets que playwright.yml)
+          STOREFRONT_URL: ${{ secrets.STOREFRONT_URL }}
+          ZOTOSHOP_API_URL: https://api.zotomatise.com
+          ZOTOSHOP_TEST_EMAIL: ${{ secrets.ZOTOSHOP_TEST_EMAIL }}
+          ZOTOSHOP_TEST_PASSWORD: ${{ secrets.ZOTOSHOP_TEST_PASSWORD }}
+        run: |
+          # le push doit passer par le même token que la PR (sinon GITHUB_TOKEN reprend la main)
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
+          python ci_ouvrir_pr.py "${{ inputs.cle_us }}"
+
+# Transposition :
+# - GitLab CI : le même script Python tourne dans un job classique ; les secrets viennent
+#   de Settings > CI/CD > Variables, et "gh pr create" devient un appel à l'API GitLab
+#   (POST /projects/:id/merge_requests) ou au CLI `glab mr create`.
+# - Azure DevOps : job dans azure-pipelines.yml, secrets en "pipeline variables" (protégées),
+#   ouverture de PR via l'extension "Azure CLI" (az repos pr create).
