@@ -1,1 +1,0 @@
-[@smoke AC2 : le premier produit affiché a un prix visible et positif] durée: 3136 ms
