@@ -57,6 +57,7 @@ def main():
         "StorePage.ts": lire_test("tests/pages/StorePage.ts"),
         "ProductPage.ts": lire_test("tests/pages/ProductPage.ts"),
         "CartPage.ts": lire_test("tests/pages/CartPage.ts"),
+        "CheckoutPage.ts": lire_test("tests/pages/CheckoutPage.ts"),
     }
     chemin_sortie = f"tests/e2e/ci-{cle_us.lower()}-genere-ia.spec.ts"
 
