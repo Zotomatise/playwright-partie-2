@@ -53,15 +53,14 @@ def construire_corps_pr(rapport):
 
 def main():
     cle_us = sys.argv[1] if len(sys.argv) > 1 else os.environ["CLE_US"]
-    pom_store = lire_test("tests/pages/StorePage.ts")
-    pom_product = lire_test("tests/pages/ProductPage.ts")
+    poms = {
+        "StorePage.ts": lire_test("tests/pages/StorePage.ts"),
+        "ProductPage.ts": lire_test("tests/pages/ProductPage.ts"),
+        "CartPage.ts": lire_test("tests/pages/CartPage.ts"),
+    }
     chemin_sortie = f"tests/e2e/ci-{cle_us.lower()}-genere-ia.spec.ts"
 
-    rapport = lancer_pipeline(
-        cle_us,
-        {"StorePage.ts": pom_store, "ProductPage.ts": pom_product},
-        chemin_sortie,
-    )
+    rapport = lancer_pipeline(cle_us, poms, chemin_sortie)
 
     if not rapport.reussi:
         print(f"::error::Pipeline arrete, {cle_us} non traitee.")
