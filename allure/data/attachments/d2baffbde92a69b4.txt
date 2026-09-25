@@ -1,0 +1,1 @@
+[@smoke AC1 : ajouter au panier incrémente le compteur de navigation de 1] durée: 30403 ms

@@ -1,0 +1,1 @@
+[@smoke AC2 : le panier affiche bien le produit après ajout] durée: 28835 ms

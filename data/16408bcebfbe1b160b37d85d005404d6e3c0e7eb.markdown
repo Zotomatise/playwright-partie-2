@@ -1,0 +1,311 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: e2e/zshop-28-genere-ia.spec.ts >> @smoke ZSHOP-28 — Ajouter un produit au panier >> @smoke AC1 : ajouter au panier incrémente le compteur de navigation de 1
+- Location: tests/e2e/zshop-28-genere-ia.spec.ts:5:3
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: page.waitForLoadState: Test timeout of 30000ms exceeded.
+```
+
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - navigation [ref=e5]:
+      - button "Menu" [ref=e12] [cursor=pointer]
+      - link "ZotoShop" [ref=e14] [cursor=pointer]:
+        - /url: /fr
+      - generic [ref=e15]:
+        - generic [ref=e16]:
+          - link "Guide QA" [ref=e17] [cursor=pointer]:
+            - /url: /fr/guide
+          - link "Compte" [ref=e18] [cursor=pointer]:
+            - /url: /fr/account
+        - button "Panier (0)" [ref=e21] [cursor=pointer]:
+          - link "Panier (0)" [ref=e22]:
+            - /url: /fr/cart
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e26]:
+          - heading "Cable USB-C ZotoLink" [level=2] [ref=e27]
+          - paragraph [ref=e28]: Cable USB-C tresse haute qualite. Charge rapide 100W, transfert donnees 10Gbps.
+        - generic [ref=e30]:
+          - heading "Informations produit" [level=3] [ref=e32]:
+            - generic [ref=e34]:
+              - paragraph [ref=e36]: Informations produit
+              - button [ref=e37] [cursor=pointer]
+          - heading "Livraison & Retours" [level=3] [ref=e43]:
+            - generic [ref=e45]:
+              - paragraph [ref=e47]: Livraison & Retours
+              - button [ref=e48] [cursor=pointer]
+      - generic [ref=e54]:
+        - generic [ref=e58]:
+          - generic [ref=e59]: Sélectionner Longueur
+          - generic [ref=e60]:
+            - button "1m" [disabled] [ref=e61]
+            - button "2m" [disabled] [ref=e62]
+            - button "3m" [disabled] [ref=e63]
+        - generic [ref=e66]: €15.00
+        - button "Ajouter au panier" [disabled] [ref=e67]:
+          - generic:
+            - generic:
+              - img
+            - text: Ajouter au panier
+    - generic [ref=e69]:
+      - generic [ref=e70]:
+        - generic [ref=e71]: Produits similaires
+        - paragraph [ref=e72]: Ces produits pourraient aussi vous intéresser.
+      - list [ref=e73]:
+        - listitem [ref=e74]:
+          - link "Thumbnail ZotoPhone Pro 15 €699.00" [ref=e75] [cursor=pointer]:
+            - /url: /fr/products/zotophone-pro-15
+            - generic [ref=e76]:
+              - img "Thumbnail" [ref=e78]
+              - generic [ref=e79]:
+                - paragraph [ref=e80]: ZotoPhone Pro 15
+                - paragraph [ref=e82]: €699.00
+        - listitem [ref=e83]:
+          - link "Thumbnail ZotoPhone Lite €299.00" [ref=e84] [cursor=pointer]:
+            - /url: /fr/products/zotophone-lite
+            - generic [ref=e85]:
+              - img "Thumbnail" [ref=e87]
+              - generic [ref=e88]:
+                - paragraph [ref=e89]: ZotoPhone Lite
+                - paragraph [ref=e91]: €299.00
+        - listitem [ref=e92]:
+          - link "Thumbnail ZotoBook Air 14 €799.00" [ref=e93] [cursor=pointer]:
+            - /url: /fr/products/zotobook-air-14
+            - generic [ref=e94]:
+              - img "Thumbnail" [ref=e96]
+              - generic [ref=e97]:
+                - paragraph [ref=e98]: ZotoBook Air 14
+                - paragraph [ref=e100]: €799.00
+        - listitem [ref=e101]:
+          - link "Thumbnail ZotoMouse Precision €49.00" [ref=e102] [cursor=pointer]:
+            - /url: /fr/products/zotomouse-precision
+            - generic [ref=e103]:
+              - img "Thumbnail" [ref=e105]
+              - generic [ref=e106]:
+                - paragraph [ref=e107]: ZotoMouse Precision
+                - paragraph [ref=e109]: €49.00
+        - listitem [ref=e110]:
+          - link "Thumbnail ZotoSpeaker Boom €89.00" [ref=e111] [cursor=pointer]:
+            - /url: /fr/products/zotospeaker-boom
+            - generic [ref=e112]:
+              - img "Thumbnail" [ref=e114]
+              - generic [ref=e115]:
+                - paragraph [ref=e116]: ZotoSpeaker Boom
+                - paragraph [ref=e118]: €89.00
+        - listitem [ref=e119]:
+          - link "Thumbnail ZotoCharge 65W €39.00" [ref=e120] [cursor=pointer]:
+            - /url: /fr/products/zotocharge-65w
+            - generic [ref=e121]:
+              - img "Thumbnail" [ref=e123]
+              - generic [ref=e124]:
+                - paragraph [ref=e125]: ZotoCharge 65W
+                - paragraph [ref=e127]: €39.00
+        - listitem [ref=e128]:
+          - link "Thumbnail ZotoBook Pro 16 €1,899.00" [ref=e129] [cursor=pointer]:
+            - /url: /fr/products/zotobook-pro-16
+            - generic [ref=e130]:
+              - img "Thumbnail" [ref=e132]
+              - generic [ref=e133]:
+                - paragraph [ref=e134]: ZotoBook Pro 16
+                - paragraph [ref=e136]: €1,899.00
+        - listitem [ref=e137]:
+          - link "Thumbnail ZotoCoque Protection €19.00" [ref=e138] [cursor=pointer]:
+            - /url: /fr/products/zotocoque
+            - generic [ref=e139]:
+              - img "Thumbnail" [ref=e141]
+              - generic [ref=e142]:
+                - paragraph [ref=e143]: ZotoCoque Protection
+                - paragraph [ref=e145]: €19.00
+        - listitem [ref=e146]:
+          - link "Thumbnail ZotoPad Controller €69.00" [ref=e147] [cursor=pointer]:
+            - /url: /fr/products/zotopad-controller
+            - generic [ref=e148]:
+              - img "Thumbnail" [ref=e150]
+              - generic [ref=e151]:
+                - paragraph [ref=e152]: ZotoPad Controller
+                - paragraph [ref=e154]: €69.00
+        - listitem [ref=e155]:
+          - link "Thumbnail ZotoBuds Pro €129.00" [ref=e156] [cursor=pointer]:
+            - /url: /fr/products/zotobuds-pro
+            - generic [ref=e157]:
+              - img "Thumbnail" [ref=e159]
+              - generic [ref=e160]:
+                - paragraph [ref=e161]: ZotoBuds Pro
+                - paragraph [ref=e163]: €129.00
+        - listitem [ref=e164]:
+          - link "Thumbnail ZotoScreen 27 QHD €279.00" [ref=e165] [cursor=pointer]:
+            - /url: /fr/products/zotoscreen-27
+            - generic [ref=e166]:
+              - img "Thumbnail" [ref=e168]
+              - generic [ref=e169]:
+                - paragraph [ref=e170]: ZotoScreen 27 QHD
+                - paragraph [ref=e172]: €279.00
+    - generic [ref=e174]:
+      - generic [ref=e175]:
+        - link "ZotoShop" [ref=e177] [cursor=pointer]:
+          - /url: /fr
+        - generic [ref=e178]:
+          - generic [ref=e179]:
+            - generic [ref=e180]: Catégories
+            - list [ref=e181]:
+              - listitem [ref=e182]:
+                - link "Smartphones" [ref=e183] [cursor=pointer]:
+                  - /url: /fr/categories/smartphones
+                - list
+              - listitem [ref=e184]:
+                - link "Laptops" [ref=e185] [cursor=pointer]:
+                  - /url: /fr/categories/laptops
+                - list
+              - listitem [ref=e186]:
+                - link "Accessoires" [ref=e187] [cursor=pointer]:
+                  - /url: /fr/categories/accessoires
+                - list
+              - listitem [ref=e188]:
+                - link "Audio" [ref=e189] [cursor=pointer]:
+                  - /url: /fr/categories/audio
+                - list
+              - listitem [ref=e190]:
+                - link "Gaming" [ref=e191] [cursor=pointer]:
+                  - /url: /fr/categories/gaming
+                - list
+          - generic [ref=e192]:
+            - generic [ref=e193]: ZotoShop
+            - list [ref=e194]:
+              - listitem [ref=e195]:
+                - link "Zotomatise" [ref=e196] [cursor=pointer]:
+                  - /url: https://zotomatise.com
+              - listitem [ref=e197]:
+                - link "Contact" [ref=e198] [cursor=pointer]:
+                  - /url: mailto:contact@zotomatise.com
+      - paragraph [ref=e200]: © 2026 ZotoShop. Tous droits réservés.
+  - alert [ref=e201]
+```
+
+# Test source
+
+```ts
+  1   | import { Page, Locator, expect } from "@playwright/test";
+  2   | import { BasePage } from "./BasePage";
+  3   | 
+  4   | /**
+  5   |  * Page Object Model pour la page produit ZotoShop.
+  6   |  * URL pattern : /fr/products/[slug]
+  7   |  *
+  8   |  * Hérite de BasePage (TP M2.L2.4 : factorisation des méthodes communes).
+  9   |  * Pattern 4 couches :
+  10  |  *   1. Locators privés
+  11  |  *   2. Navigation
+  12  |  *   3. Actions métier
+  13  |  *   4. Assertions encapsulées
+  14  |  */
+  15  | export class ProductPage extends BasePage {
+  16  |   // === Couche 1 : LOCATORS PRIVÉS ===
+  17  |   private readonly title: Locator;
+  18  |   private readonly price: Locator;
+  19  |   private readonly addToCartButton: Locator;
+  20  |   private readonly variantOptions: Locator;
+  21  |   private readonly stockIndicator: Locator;
+  22  | 
+  23  |   constructor(page: Page) {
+  24  |     super(page);
+  25  |     // Le titre de la fiche produit est un h2 (le h1 est réservé à la page boutique).
+  26  |     // Locator sémantique par rôle, jamais de sélecteur CSS positionnel (cf. conventions).
+  27  |     this.title = page.getByRole("heading", { level: 2 }).first();
+  28  |     this.price = page.getByTestId("product-price").first();
+  29  |     // Sélecteur stable Medusa : data-testid="add-product-button"
+  30  |     this.addToCartButton = page.getByTestId("add-product-button");
+  31  |     // Boutons de sélection de variante (couleur, taille...)
+  32  |     this.variantOptions = page.getByTestId("option-button");
+  33  |     this.stockIndicator = page.getByTestId("product-stock-indicator");
+  34  |   }
+  35  | 
+  36  |   // === Couche 2 : NAVIGATION ===
+  37  |   /**
+  38  |    * Navigue vers une page produit donnée par son slug et attend que la page soit prête.
+  39  |    * Exemple : await productPage.goto("zotopad-controller")
+  40  |    */
+  41  |   async goto(slug: string): Promise<void> {
+  42  |     await this.page.goto(`/fr/products/${slug}`);
+  43  |     await this.attendPageToBeVisible();
+  44  |   }
+  45  | 
+  46  |   // === Couche 3 : ACTIONS MÉTIER ===
+  47  |   /**
+  48  |    * Sélectionne la première variante disponible (couleur, taille...).
+  49  |    * Médusa désactive le bouton "Ajouter au panier" tant qu'aucune variante n'est choisie.
+  50  |    */
+  51  |   async selectionnerPremiereVariante(): Promise<void> {
+  52  |     await this.variantOptions.first().click();
+  53  |   }
+  54  | 
+  55  |   /**
+  56  |    * Sélectionne la première variante disponible PUIS clique sur "Ajouter au panier".
+  57  |    * Le bouton est désactivé tant qu'aucune variante n'est sélectionnée.
+  58  |    * Attend la fin de la requête AJAX d'ajout au panier avant de retourner.
+  59  |    */
+  60  |   async addToCart(): Promise<void> {
+  61  |     await this.selectionnerPremiereVariante();
+  62  |     await this.addToCartButton.click();
+  63  |     // ⚠️ IMPORTANT : attendre que la requête AJAX d'ajout au panier se termine.
+  64  |     // Sans ça, la navigation suivante peut se faire avant que le panier soit mis à jour.
+> 65  |     await this.page.waitForLoadState("networkidle");
+      |                     ^ Error: page.waitForLoadState: Test timeout of 30000ms exceeded.
+  66  |   }
+  67  | 
+  68  |   /**
+  69  |    * Lit le prix affiché sur la page produit et retourne sa valeur numérique.
+  70  |    * Gère le cas où le prix est introuvable (null) avec un early throw.
+  71  |    */
+  72  |   async lirePrix(): Promise<number> {
+  73  |     const texte = await this.price.textContent();
+  74  |     if (texte === null) {
+  75  |       throw new Error("Prix introuvable sur la page produit");
+  76  |     }
+  77  |     return parseFloat(texte.replace("€", "").trim());
+  78  |   }
+  79  | 
+  80  |   // === Couche 4 : ASSERTIONS ENCAPSULÉES ===
+  81  |   /**
+  82  |    * Vérifie que la page produit est bien affichée (titre + bouton d'ajout au panier).
+  83  |    */
+  84  |   async expectVisible(): Promise<void> {
+  85  |     await expect(this.title).toBeVisible();
+  86  |     await expect(this.addToCartButton).toBeVisible();
+  87  |   }
+  88  | 
+  89  |   /**
+  90  |    * Vérifie que le prix affiché est strictement positif.
+  91  |    */
+  92  |   async expectPrixPositif(): Promise<void> {
+  93  |     const prix = await this.lirePrix();
+  94  |     expect(prix).toBeGreaterThan(0);
+  95  |   }
+  96  | 
+  97  |   /**
+  98  |    * Vérifie qu'un produit sans stock affiche "Rupture de stock" et que le bouton est désactivé.
+  99  |    * Doit être appelée APRÈS selectionnerPremiereVariante() — l'indicateur n'apparaît qu'une fois une variante choisie.
+  100 |    */
+  101 |   async expectRuptureDeStock(): Promise<void> {
+  102 |     await expect(this.stockIndicator).toContainText("Rupture de stock");
+  103 |     await expect(this.addToCartButton).toBeDisabled();
+  104 |   }
+  105 | }
+  106 | 
+```

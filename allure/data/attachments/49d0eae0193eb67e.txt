@@ -1,1 +1,0 @@
-[@smoke AC2 : cliquer sur le premier produit ouvre sa fiche et affiche le titre] durée: 18032 ms
